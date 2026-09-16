@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স | ওষুধ গুছিয়ে রাখুন সহজে — Vendorify</title>
+<meta name="description" content="প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স — সকাল, দুপুর, রাত ও অন্যান্য ওষুধ আলাদা করে গুছিয়ে রাখুন। সারাদেশে ক্যাশ অন ডেলিভারি। এখনই অর্ডার করুন।">
+<meta property="og:title" content="প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স — Vendorify">
+<meta property="og:description" content="ওষুধ খুঁজতে গিয়ে আর সময় নষ্ট নয় — সব থাকবে হাতের কাছেই।">
+<meta property="og:type" content="product">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স",
+  "description": "৪টি আলাদা ড্রয়ারের মেডিসিন অর্গানাইজার বক্স — সকাল, দুপুর, রাত ও অন্যান্য ওষুধ আলাদা করে গুছিয়ে রাখার জন্য।",
+  "brand": { "@type": "Brand", "name": "Vendorify" },
+  "offers": { "@type": "Offer", "priceCurrency": "BDT", "price": "1450", "availability": "https://schema.org/InStock" }
+}
+</script>
+
+<style>
+:root{
+  --brand:#008bf5;
+  --brand-dark:#006bc4;
+  --brand-light:#eaf4ff;
+  --ink:#0f172a;
+  --paper:#f8fafc;
+}
+*{font-family:'Hind Siliguri', sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper); color:var(--ink);}
+.bg-brand{background-color:var(--brand);}
+.text-brand{color:var(--brand);}
+
+.card-soft{ box-shadow:0 10px 30px -12px rgba(15,23,42,.08); }
+.card-lift{ transition:transform .25s ease, box-shadow .25s ease; }
+.card-lift:hover{ transform:translateY(-5px); box-shadow:0 18px 34px -14px rgba(0,139,245,.18); }
+
+.pulse-ring{ animation:pulseRing 2.4s cubic-bezier(0.4,0,0.6,1) infinite; }
+@keyframes pulseRing{
+  0%{box-shadow:0 0 0 0 rgba(0,139,245,.35);}
+  70%{box-shadow:0 0 0 14px rgba(0,139,245,0);}
+  100%{box-shadow:0 0 0 0 rgba(0,139,245,0);}
+}
+
+.fade-up{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+.fade-up.in-view{ opacity:1; transform:translateY(0); }
+
+#orderModal{ transition:opacity .25s ease; }
+#orderModal .modal-panel{ transition:transform .3s cubic-bezier(.2,.9,.3,1), opacity .3s ease; }
+.accordion-content{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+.thumb-active{ border-color:var(--brand) !important; box-shadow:0 0 0 2px rgba(0,139,245,.2); }
+.modal-scroll::-webkit-scrollbar{ width:6px; }
+.modal-scroll::-webkit-scrollbar-thumb{ background:#cbd5e1; border-radius:99px; }
+.pb-safe{ padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--brand); outline-offset:2px;
+}
+
+@media (prefers-reduced-motion: reduce){ .pulse-ring{ animation:none !important; } .fade-up{ transition:none !important; opacity:1 !important; transform:none !important; } }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ============================================================
+     LOGO — replace this URL with your own hosted logo if the
+     Google Drive link ever stops rendering (Drive links need the
+     file shared as "Anyone with the link can view").
+============================================================= -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100">
+  <div class="max-w-3xl mx-auto px-5 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <img src="https://drive.google.com/uc?export=view&id=1cd7AQqu2cCe0O3-fF6sWxZzxh4rW3AAW" alt="Vendorify" class="h-7 w-auto" onerror="this.style.display='none'">
+      <span class="font-bold text-slate-800">Vendorify</span>
+    </div>
+    <button onclick="openOrderModal()" class="bg-brand text-white text-sm font-semibold px-4 py-2 rounded-full">অর্ডার করুন</button>
+  </div>
+</header>
+
+<!-- ================= 1. HERO ================= -->
+<section class="max-w-lg mx-auto px-5 pt-10 pb-8 text-center">
+  <!-- PRODUCT_IMAGE_1 is set from the CONFIG block in the script below -->
+  <div class="rounded-3xl overflow-hidden card-soft mb-6 bg-white">
+    <img id="heroImage" src="" alt="প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স" class="w-full aspect-square object-cover">
+  </div>
+
+  <span class="inline-flex items-center gap-2 bg-brand-light text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-5">
+    <i class="fa-solid fa-box"></i> প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স
+  </span>
+
+  <h1 class="text-2xl sm:text-3xl font-bold leading-snug text-slate-900 mb-4">
+    ওষুধ খুঁজতে গিয়ে আর সময় নষ্ট নয়—<br>সব থাকবে হাতের কাছেই
+  </h1>
+
+  <p class="text-slate-500 leading-relaxed mb-7 max-w-md mx-auto">
+    ঘরের বিভিন্ন কোণে ছড়িয়ে থাকা ওষুধ খুঁজে বের করা প্রতিদিনের এক ছোট্ট কিন্তু বিরক্তিকর ঝামেলা। একটি বক্সেই সকাল, দুপুর, রাত ও অন্যান্য ওষুধ আলাদা করে গুছিয়ে রাখুন — প্রয়োজনের সময় হাতের কাছেই পাবেন।
+  </p>
+
+  <button onclick="openOrderModal()" class="pulse-ring bg-brand hover:bg-[--brand-dark] text-white font-bold px-8 py-4 rounded-full transition-colors shadow-lg shadow-brand/25 w-full sm:w-auto">
+    <i class="fa-solid fa-bag-shopping mr-2"></i> এখনই অর্ডার করুন
+  </button>
+
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5 mt-5 text-sm text-slate-500">
+    <span><i class="fa-solid fa-circle-check text-brand mr-1.5"></i>ক্যাশ অন ডেলিভারি</span>
+    <span><i class="fa-solid fa-circle-check text-brand mr-1.5"></i>সারাদেশে ডেলিভারি</span>
+    <span><i class="fa-solid fa-circle-check text-brand mr-1.5"></i>অগ্রিম টাকা লাগে না</span>
+  </div>
+</section>
+
+<!-- ================= 2. PROBLEM / STORY SECTION ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <div class="bg-white rounded-3xl card-soft p-6 sm:p-8">
+    <h2 class="text-xl font-bold text-slate-900 mb-4">বাড়িতে ওষুধগুলো কোথায় আছে?</h2>
+    <p class="text-slate-500 leading-relaxed mb-5">একটু মনে করে দেখুন তো — বাসার ওষুধগুলো কি একজায়গায় গোছানো আছে, নাকি বিভিন্ন ড্রয়ার, ব্যাগ আর তাকে ছড়িয়ে আছে?</p>
+    <ul class="space-y-3 text-sm text-slate-600">
+      <li class="flex items-start gap-3"><i class="fa-solid fa-circle-exclamation text-brand mt-1"></i>প্রয়োজনের সময় ওষুধ খুঁজে পাওয়া যায় না</li>
+      <li class="flex items-start gap-3"><i class="fa-solid fa-circle-exclamation text-brand mt-1"></i>বিভিন্ন জায়গায় ওষুধ ছড়িয়ে থাকে</li>
+      <li class="flex items-start gap-3"><i class="fa-solid fa-circle-exclamation text-brand mt-1"></i>বাচ্চাদের নাগালের মধ্যে পড়ে থাকতে পারে</li>
+      <li class="flex items-start gap-3"><i class="fa-solid fa-circle-exclamation text-brand mt-1"></i>সকাল/দুপুর/রাতের ওষুধ আলাদা করে রাখা কঠিন হয়ে পড়ে</li>
+      <li class="flex items-start gap-3"><i class="fa-solid fa-circle-exclamation text-brand mt-1"></i>পরিবারের একাধিক সদস্যের ওষুধ গুছিয়ে রাখা বেশ ঝামেলার</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 3. PRODUCT INTRODUCTION ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <h2 class="text-xl font-bold text-slate-900 text-center mb-2">একটি বক্সেই ৪ ড্রয়ারের সহজ সমাধান</h2>
+  <p class="text-slate-500 text-center text-sm mb-6">প্রতিটি ড্রয়ার একটি নির্দিষ্ট সময়ের জন্য — কোনো বিভ্রান্তি ছাড়াই</p>
+
+  <div class="grid grid-cols-2 gap-4">
+    <div class="bg-white rounded-2xl card-soft card-lift p-5 text-center">
+      <div class="text-2xl mb-2">🌅</div>
+      <p class="font-semibold text-slate-800 text-sm mb-1">সকাল</p>
+      <p class="text-xs text-slate-500 leading-relaxed">সকালের ওষুধ আলাদা ড্রয়ারে গোছানো</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft card-lift p-5 text-center">
+      <div class="text-2xl mb-2">☀️</div>
+      <p class="font-semibold text-slate-800 text-sm mb-1">দুপুর</p>
+      <p class="text-xs text-slate-500 leading-relaxed">দুপুরের ওষুধ খুঁজে পাওয়া সহজ হবে</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft card-lift p-5 text-center">
+      <div class="text-2xl mb-2">🌙</div>
+      <p class="font-semibold text-slate-800 text-sm mb-1">রাত</p>
+      <p class="text-xs text-slate-500 leading-relaxed">রাতের ওষুধের জন্য আলাদা জায়গা</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft card-lift p-5 text-center">
+      <div class="text-2xl mb-2">💊</div>
+      <p class="font-semibold text-slate-800 text-sm mb-1">অন্যান্য ওষুধ</p>
+      <p class="text-xs text-slate-500 leading-relaxed">মাঝে মাঝে লাগে এমন ওষুধ রাখার জায়গা</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. FEATURES ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <div class="bg-white rounded-3xl card-soft p-6 sm:p-8">
+    <h2 class="text-xl font-bold text-slate-900 mb-5 text-center">প্রতিদিনের ব্যবহারে যা সুবিধা দেবে</h2>
+    <div class="grid grid-cols-1 gap-3 text-sm text-slate-600">
+      <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>৪টি আলাদা ড্রয়ার</div>
+      <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>ওষুধ আলাদা করে রাখা যায়</div>
+      <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>প্রয়োজনের সময় সহজে খুঁজে পাওয়া যায়</div>
+      <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>টেবিল, আলমারি বা বেডসাইডে রাখা যায়</div>
+      <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>ঘরকে আরও গোছানো রাখতে সাহায্য করে</div>
+      <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>কম জায়গায় সুন্দরভাবে সংরক্ষণ করা যায়</div>
+      <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>পরিবারের সবার জন্য ব্যবহারযোগ্য</div>
+      <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>দৈনন্দিন ব্যবহারে সুবিধাজনক</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. PRODUCT DETAILS ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <h2 class="text-xl font-bold text-slate-900 text-center mb-5">প্রোডাক্ট ডিটেইলস</h2>
+  <div class="bg-white rounded-3xl card-soft overflow-hidden">
+    <!-- EDIT PRODUCT DETAILS: update the values below with your exact specs -->
+    <dl class="divide-y divide-slate-100 text-sm">
+      <div class="flex justify-between px-5 py-3.5"><dt class="text-slate-500">প্রোডাক্ট নাম</dt><dd class="font-semibold text-slate-800">প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স</dd></div>
+      <div class="flex justify-between px-5 py-3.5 bg-slate-50/60"><dt class="text-slate-500">ড্রয়ার সংখ্যা</dt><dd class="font-semibold text-slate-800">৪টি</dd></div>
+      <div class="flex justify-between px-5 py-3.5"><dt class="text-slate-500">উপাদান</dt><dd class="font-semibold text-slate-800">[এখানে উপাদান লিখুন — যেমন: কাঠ]</dd></div>
+      <div class="flex justify-between px-5 py-3.5 bg-slate-50/60"><dt class="text-slate-500">আনুমানিক মাপ</dt><dd class="font-semibold text-slate-800">[এখানে মাপ লিখুন]</dd></div>
+      <div class="flex justify-between px-5 py-3.5"><dt class="text-slate-500">রঙ</dt><dd class="font-semibold text-slate-800">[এখানে রঙ লিখুন]</dd></div>
+      <div class="flex justify-between px-5 py-3.5 bg-slate-50/60"><dt class="text-slate-500">উপযোগী স্থান</dt><dd class="font-semibold text-slate-800 text-right">ঘর, অফিস, বেডসাইড টেবিল</dd></div>
+      <div class="flex justify-between px-5 py-3.5"><dt class="text-slate-500">প্যাকেজে কী থাকছে</dt><dd class="font-semibold text-slate-800">[প্যাকেজ কন্টেন্ট লিখুন]</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= 6. WHY YOU NEED IT ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up text-center">
+  <h2 class="text-xl font-bold text-slate-900 mb-3">ছোট্ট একটি বক্স, প্রতিদিনের অনেক ঝামেলার সমাধান</h2>
+  <p class="text-slate-500 leading-relaxed">ওষুধ গোছানো থাকলে প্রতিদিনের রুটিন অনেকটাই সহজ হয়ে যায় — আর খুঁজে বের করার তাড়াহুড়োও কমে আসে। ছোট এই পরিবর্তনটাই ঘরের দৈনন্দিন জীবনকে একটু বেশি গোছানো করে তোলে।</p>
+</section>
+
+<!-- ================= 7. VISUAL SHOWCASE ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <div class="bg-white rounded-3xl card-soft p-4 sm:p-5">
+    <div class="rounded-2xl overflow-hidden mb-3">
+      <img id="showcaseMain" src="" alt="প্রোডাক্ট শোকেস" class="w-full aspect-square object-cover cursor-zoom-in" onclick="openLightbox(this.src)">
+    </div>
+    <div class="grid grid-cols-3 gap-2">
+      <button class="showcase-thumb thumb-active rounded-xl overflow-hidden border-2 border-transparent" data-idx="0"><img src="" class="thumb-img w-full aspect-square object-cover" alt="থাম্বনেইল ১" loading="lazy"></button>
+      <button class="showcase-thumb rounded-xl overflow-hidden border-2 border-transparent" data-idx="1"><img src="" class="thumb-img w-full aspect-square object-cover" alt="থাম্বনেইল ২" loading="lazy"></button>
+      <button class="showcase-thumb rounded-xl overflow-hidden border-2 border-transparent" data-idx="2"><img src="" class="thumb-img w-full aspect-square object-cover" alt="থাম্বনেইল ৩" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 p-5" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="" class="max-w-full max-h-full rounded-xl">
+</div>
+
+<!-- ================= 8. USE CASE CARDS ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <div class="grid grid-cols-2 gap-4">
+    <div class="bg-white rounded-2xl card-soft card-lift p-5">
+      <div class="text-xl mb-2">❤️</div>
+      <p class="font-semibold text-slate-800 text-sm mb-1">পরিবারের জন্য</p>
+      <p class="text-xs text-slate-500 leading-relaxed">বাড়ির প্রয়োজনীয় ওষুধগুলো গুছিয়ে রাখতে সাহায্য করবে।</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft card-lift p-5">
+      <div class="text-xl mb-2">🏠</div>
+      <p class="font-semibold text-slate-800 text-sm mb-1">ঘরের জন্য</p>
+      <p class="text-xs text-slate-500 leading-relaxed">টেবিল বা আলমারিতে সুন্দরভাবে রাখা যায়।</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft card-lift p-5">
+      <div class="text-xl mb-2">💊</div>
+      <p class="font-semibold text-slate-800 text-sm mb-1">ওষুধের জন্য</p>
+      <p class="text-xs text-slate-500 leading-relaxed">বিভিন্ন ধরনের ওষুধ আলাদা করে রাখার সুবিধা।</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft card-lift p-5">
+      <div class="text-xl mb-2">🎁</div>
+      <p class="font-semibold text-slate-800 text-sm mb-1">উপহার হিসেবে</p>
+      <p class="text-xs text-slate-500 leading-relaxed">প্রিয়জনকে ব্যবহারিক উপহার হিসেবেও দেওয়া যায়।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9. OFFER ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <div class="bg-slate-900 rounded-3xl p-6 sm:p-8 text-center text-white">
+    <span class="inline-block bg-white/10 text-xs font-medium px-3 py-1 rounded-full mb-4">🔥 বিশেষ অফার</span>
+    <div class="flex items-center justify-center gap-3 mb-2">
+      <span id="offerOldPrice" class="text-lg text-slate-400 line-through"></span>
+      <span id="offerPrice" class="text-3xl font-bold"></span>
+    </div>
+    <p class="text-slate-400 text-xs mb-6">ডেলিভারি চার্জ: ঢাকার ভিতরে ৳<span id="offerDhakaCharge"></span> | ঢাকার বাইরে ৳<span id="offerOutsideCharge"></span></p>
+    <button onclick="openOrderModal()" class="bg-brand hover:bg-[--brand-dark] text-white font-bold px-8 py-3.5 rounded-full w-full sm:w-auto transition-colors">অর্ডার করতে এখনই ক্লিক করুন</button>
+  </div>
+</section>
+
+<!-- ================= 10. REVIEWS ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <h2 class="text-xl font-bold text-slate-900 text-center mb-6">কাস্টমাররা যা বলছেন</h2>
+  <div class="space-y-4">
+    <div class="bg-white rounded-2xl card-soft p-5">
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-9 h-9 rounded-full bg-brand-light flex items-center justify-center text-brand font-bold text-sm">র</div>
+        <div><p class="font-semibold text-slate-800 text-sm">রুমানা আক্তার</p><span class="text-[11px] text-green-600"><i class="fa-solid fa-circle-check mr-1"></i>Verified Buyer</span></div>
+      </div>
+      <div class="text-brand text-xs mb-1.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p class="text-sm text-slate-600 leading-relaxed">এখন ওষুধ খুঁজতে আর সময় নষ্ট হয় না, ড্রয়ারগুলো খুবই কাজে লাগে।</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft p-5">
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-9 h-9 rounded-full bg-brand-light flex items-center justify-center text-brand font-bold text-sm">ক</div>
+        <div><p class="font-semibold text-slate-800 text-sm">কামরুল হাসান</p><span class="text-[11px] text-green-600"><i class="fa-solid fa-circle-check mr-1"></i>Verified Buyer</span></div>
+      </div>
+      <div class="text-brand text-xs mb-1.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p class="text-sm text-slate-600 leading-relaxed">দেখতে বেশ সুন্দর, বাসায় টেবিলের উপর রাখলে ভালো লাগে। প্যাকেজিংও ভালো ছিল।</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft p-5">
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-9 h-9 rounded-full bg-brand-light flex items-center justify-center text-brand font-bold text-sm">শ</div>
+        <div><p class="font-semibold text-slate-800 text-sm">শারমিন সুলতানা</p><span class="text-[11px] text-green-600"><i class="fa-solid fa-circle-check mr-1"></i>Verified Buyer</span></div>
+      </div>
+      <div class="text-brand text-xs mb-1.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+      <p class="text-sm text-slate-600 leading-relaxed">পরিবারের সবার ওষুধ আলাদা করে রাখতে পারছি, বাসায় ব্যবহার করাও সুবিধাজনক।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11. TRUST ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+    <div class="bg-white rounded-2xl card-soft p-4"><i class="fa-solid fa-money-bill-wave text-brand mb-2"></i><p class="text-xs font-semibold text-slate-700">Cash on Delivery</p></div>
+    <div class="bg-white rounded-2xl card-soft p-4"><i class="fa-solid fa-truck-fast text-brand mb-2"></i><p class="text-xs font-semibold text-slate-700">Fast Delivery</p></div>
+    <div class="bg-white rounded-2xl card-soft p-4"><i class="fa-solid fa-hand-pointer text-brand mb-2"></i><p class="text-xs font-semibold text-slate-700">Easy Ordering</p></div>
+    <div class="bg-white rounded-2xl card-soft p-4"><i class="fa-solid fa-headset text-brand mb-2"></i><p class="text-xs font-semibold text-slate-700">Customer Support</p></div>
+  </div>
+</section>
+
+<!-- ================= 12. FAQ ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8 fade-up">
+  <h2 class="text-xl font-bold text-slate-900 text-center mb-5">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
+  <div class="space-y-3" id="faqAccordion">
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-slate-800 text-sm">এই বক্সে কয়টি ড্রয়ার আছে?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">এই বক্সে মোট ৪টি আলাদা ড্রয়ার আছে।</p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-slate-800 text-sm">কোন ধরনের ওষুধ রাখা যাবে?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">সাধারণ ট্যাবলেট, ক্যাপসুল ও ছোট ওষুধের প্যাকেট এই বক্সে রাখা যায়।</p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-slate-800 text-sm">COD আছে?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">হ্যাঁ, ক্যাশ অন ডেলিভারি সুবিধা আছে।</p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-slate-800 text-sm">ঢাকার বাইরে ডেলিভারি হয়?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">হ্যাঁ, সারাদেশে ডেলিভারি দেওয়া হয়।</p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-slate-800 text-sm">অর্ডার করতে কী তথ্য লাগবে?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">নাম, ফোন নম্বর ও ঠিকানা দিলেই অর্ডার সম্পন্ন হয়ে যাবে।</p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-slate-800 text-sm">ডেলিভারি চার্জ কত?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500" id="faqDeliveryText"></p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-slate-800 text-sm">পণ্য হাতে পাওয়ার পর পেমেন্ট করা যাবে?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">হ্যাঁ, ক্যাশ অন ডেলিভারিতে পণ্য হাতে পাওয়ার পরই টাকা দিতে পারবেন।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 13. FINAL CTA ================= -->
+<section class="max-w-lg mx-auto px-5 pb-14 fade-up text-center">
+  <h2 class="text-2xl font-bold text-slate-900 mb-3">ওষুধ খোঁজার ঝামেলা কমিয়ে<br>ঘরটা রাখুন আরও গোছানো</h2>
+  <p class="text-slate-500 mb-6">প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স — আজই অর্ডার করুন।</p>
+  <button onclick="openOrderModal()" class="bg-brand hover:bg-[--brand-dark] text-white font-bold px-8 py-4 rounded-full w-full sm:w-auto shadow-lg shadow-brand/20 transition-colors">
+    <i class="fa-solid fa-bag-shopping mr-2"></i> এখনই অর্ডার করুন
+  </button>
+</section>
+
+<footer class="border-t border-slate-100 py-8 text-center text-xs text-slate-400 pb-24 sm:pb-8">
+  © 2026 Vendorify। সর্বস্বত্ব সংরক্ষিত।
+</footer>
+
+<!-- ================= MOBILE STICKY CTA ================= -->
+<div class="fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-100 shadow-[0_-8px_20px_rgba(0,0,0,.06)] pb-safe">
+  <div class="max-w-lg mx-auto flex items-center gap-3 px-4 py-3">
+    <div class="flex-1">
+      <p class="text-[11px] text-slate-400 leading-none">মূল্য</p>
+      <p id="stickyPrice" class="font-bold text-slate-800"></p>
+    </div>
+    <button onclick="openOrderModal()" class="bg-brand text-white font-bold px-6 py-3 rounded-full text-sm">অর্ডার করুন</button>
+  </div>
+</div>
+
+<!-- ================= BUY NOW MODAL ================= -->
+<div id="orderModal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 sm:p-4">
+  <div id="modalOverlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <div class="modal-panel opacity-0 scale-95 relative bg-white w-full sm:max-w-md sm:rounded-3xl rounded-t-3xl max-h-[92vh] overflow-y-auto modal-scroll shadow-2xl">
+
+    <div class="sticky top-0 bg-white z-10 flex items-center justify-between px-5 py-4 border-b border-slate-100">
+      <h3 class="font-bold text-slate-800"><i class="fa-solid fa-bag-shopping text-brand mr-2"></i>অর্ডার কনফার্ম করুন</h3>
+      <button onclick="closeOrderModal()" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-500" aria-label="Close"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+
+    <div id="formView">
+      <form id="orderForm" class="px-5 py-5 space-y-5" novalidate>
+
+        <div class="flex items-center gap-3 bg-slate-50 rounded-2xl p-3">
+          <img id="modalProductImg" src="" alt="প্রোডাক্ট" class="w-14 h-14 rounded-xl object-cover">
+          <div class="flex-1">
+            <p class="font-semibold text-slate-800 text-sm">প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স</p>
+            <p id="modalPriceLine" class="text-brand font-bold text-sm"></p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">পরিমাণ</label>
+          <div class="flex items-center gap-3">
+            <button type="button" id="qtyMinus" class="w-11 h-11 rounded-xl border border-slate-200 flex items-center justify-center text-slate-700 font-bold hover:bg-slate-50">−</button>
+            <input type="number" id="qtyInput" value="1" min="1" max="10" class="w-16 text-center border border-slate-200 rounded-xl py-2.5 font-semibold" readonly>
+            <button type="button" id="qtyPlus" class="w-11 h-11 rounded-xl border border-slate-200 flex items-center justify-center text-slate-700 font-bold hover:bg-slate-50">+</button>
+          </div>
+        </div>
+
+        <div class="space-y-4 pt-2 border-t border-slate-100">
+          <div>
+            <label for="custName" class="block text-xs font-medium text-slate-500 mb-1.5">পূর্ণ নাম *</label>
+            <input id="custName" type="text" placeholder="আপনার নাম লিখুন" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none">
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+          <div>
+            <label for="custPhone" class="block text-xs font-medium text-slate-500 mb-1.5">মোবাইল নম্বর *</label>
+            <input id="custPhone" type="tel" inputmode="numeric" placeholder="01XXXXXXXXX" maxlength="11" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none">
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+          <div>
+            <label for="custAddress" class="block text-xs font-medium text-slate-500 mb-1.5">সম্পূর্ণ ঠিকানা (জেলা, থানা, এলাকা) *</label>
+            <textarea id="custAddress" rows="2" placeholder="যেমন: ঢাকা, ধানমন্ডি, রোড ৫, বাসা ১২" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none resize-none"></textarea>
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+        </div>
+
+        <!-- delivery zone -->
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">ডেলিভারি এলাকা *</label>
+          <div class="grid grid-cols-2 gap-3" id="zoneGroup">
+            <label class="zone-option cursor-pointer">
+              <input type="radio" name="zone" value="inside" class="peer hidden" checked>
+              <div class="peer-checked:border-[#008bf5] peer-checked:bg-[#eaf4ff] border-2 border-slate-200 rounded-xl py-3 text-center transition-colors">
+                <p class="text-sm font-semibold text-slate-700">ঢাকার ভিতরে</p>
+                <p class="text-xs text-slate-400" id="zoneInsideLabel"></p>
+              </div>
+            </label>
+            <label class="zone-option cursor-pointer">
+              <input type="radio" name="zone" value="outside" class="peer hidden">
+              <div class="peer-checked:border-[#008bf5] peer-checked:bg-[#eaf4ff] border-2 border-slate-200 rounded-xl py-3 text-center transition-colors">
+                <p class="text-sm font-semibold text-slate-700">ঢাকার বাইরে</p>
+                <p class="text-xs text-slate-400" id="zoneOutsideLabel"></p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- payment -->
+        <div class="space-y-3 pt-2 border-t border-slate-100">
+          <p class="text-sm font-semibold text-slate-700 pt-1">পেমেন্ট পদ্ধতি</p>
+          <div class="grid grid-cols-3 gap-3" id="paymentGroup">
+            <label class="payment-option cursor-pointer"><input type="radio" name="payment" value="COD" class="peer hidden" checked><div class="peer-checked:border-[#008bf5] peer-checked:bg-[#eaf4ff] border-2 border-slate-200 rounded-xl py-3 text-center text-xs font-medium transition-colors flex flex-col items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> COD</div></label>
+            <label class="payment-option cursor-pointer"><input type="radio" name="payment" value="bKash" class="peer hidden"><div class="peer-checked:border-[#008bf5] peer-checked:bg-[#eaf4ff] border-2 border-slate-200 rounded-xl py-3 text-center text-xs font-medium transition-colors flex flex-col items-center gap-1"><i class="fa-solid fa-mobile-screen-button"></i> bKash</div></label>
+            <label class="payment-option cursor-pointer"><input type="radio" name="payment" value="Nagad" class="peer hidden"><div class="peer-checked:border-[#008bf5] peer-checked:bg-[#eaf4ff] border-2 border-slate-200 rounded-xl py-3 text-center text-xs font-medium transition-colors flex flex-col items-center gap-1"><i class="fa-solid fa-wallet"></i> Nagad</div></label>
+          </div>
+          <div id="mfsFields" class="hidden bg-brand-light/60 rounded-xl p-4">
+            <label for="mfsNumber" class="block text-xs font-medium text-slate-500 mb-1.5">পেমেন্ট নম্বর (ঐচ্ছিক)</label>
+            <input id="mfsNumber" type="tel" inputmode="numeric" placeholder="01XXXXXXXXX" maxlength="11" class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:border-brand outline-none bg-white">
+          </div>
+        </div>
+
+        <!-- summary -->
+        <div class="bg-slate-50 rounded-2xl p-4 space-y-2 text-sm">
+          <div class="flex justify-between text-slate-500"><span>Product</span><span id="sumProduct" class="text-slate-800 font-medium"></span></div>
+          <div class="flex justify-between text-slate-500"><span>Price</span><span id="sumPrice" class="text-slate-800 font-medium"></span></div>
+          <div class="flex justify-between text-slate-500"><span>Delivery Charge</span><span id="sumDelivery" class="text-slate-800 font-medium"></span></div>
+          <div class="flex justify-between font-bold text-slate-800 pt-2 border-t border-slate-200"><span>Total Amount</span><span id="sumTotal" class="text-brand"></span></div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="w-full bg-brand hover:bg-[--brand-dark] text-white font-bold py-4 rounded-full transition-colors">
+          <span id="submitBtnText">অর্ডার কনফার্ম করুন</span>
+        </button>
+      </form>
+    </div>
+
+    <div id="successView" class="hidden px-6 py-10 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-green-100 text-green-600 flex items-center justify-center text-2xl mb-5"><i class="fa-solid fa-check"></i></div>
+      <h3 class="text-xl font-bold text-slate-800 mb-2">🎉 আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে!</h3>
+      <p class="text-slate-500 text-sm mb-4">আমাদের প্রতিনিধি খুব শীঘ্রই আপনার সাথে যোগাযোগ করবেন।</p>
+      <div class="bg-slate-50 rounded-xl py-3 px-4 inline-block mb-6">
+        <p class="text-xs text-slate-400">Order ID</p>
+        <p id="orderIdDisplay" class="font-bold text-brand text-lg"></p>
+      </div>
+      <button onclick="closeOrderModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-full transition-colors">ঠিক আছে</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   ⚙️ CONFIGURATION — edit everything here
+========================================================= */
+const CONFIG = {
+  product: {
+    name: "প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স",
+    price: 1450,        // 2) OFFER PRICE — change here
+    oldPrice: 2200       // regular price shown with strikethrough
+  },
+  delivery: {
+    inside: 80,           // 3) DELIVERY CHARGE — inside Dhaka
+    outside: 130          // 3) DELIVERY CHARGE — outside Dhaka
+  },
+  // 1) PRODUCT IMAGES — replace these three URLs with your own photos
+  images: {
+    PRODUCT_IMAGE_1: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=900&q=80",
+    PRODUCT_IMAGE_2: "https://images.unsplash.com/photo-1583912267550-d44c9c9c0c92?w=900&q=80",
+    PRODUCT_IMAGE_3: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=900&q=80"
+  },
+  // 4) GOOGLE FORM — replace with your form's action URL and entry IDs
+  googleForm: {
+    URL: "https://docs.google.com/forms/d/e/GOOGLE_FORM_ID/formResponse",
+    ENTRY_PRODUCT: "entry.GOOGLE_FORM_ENTRY_PRODUCT",
+    ENTRY_QUANTITY: "entry.GOOGLE_FORM_ENTRY_QUANTITY",
+    ENTRY_NAME: "entry.GOOGLE_FORM_ENTRY_NAME",
+    ENTRY_PHONE: "entry.GOOGLE_FORM_ENTRY_PHONE",
+    ENTRY_ADDRESS: "entry.GOOGLE_FORM_ENTRY_ADDRESS",
+    ENTRY_PAYMENT: "entry.GOOGLE_FORM_ENTRY_PAYMENT",
+    ENTRY_TOTAL: "entry.GOOGLE_FORM_ENTRY_TOTAL"
+  },
+  // 5) TELEGRAM / GOOGLE APPS SCRIPT — deploy an Apps Script web app that
+  // receives this JSON and forwards it to Telegram using TELEGRAM_BOT_TOKEN /
+  // TELEGRAM_CHAT_ID stored as script properties (never put the token here).
+  appsScript: {
+    URL: "https://script.google.com/macros/s/YOUR_APPS_SCRIPT_DEPLOYMENT_ID/exec"
+  }
+};
+
+let isSubmitting = false;
+
+/* ============ INITIALIZE IMAGES / PRICES FROM CONFIG ============ */
+function initFromConfig() {
+  const imgs = [CONFIG.images.PRODUCT_IMAGE_1, CONFIG.images.PRODUCT_IMAGE_2, CONFIG.images.PRODUCT_IMAGE_3];
+  document.getElementById('heroImage').src = imgs[0];
+  document.getElementById('showcaseMain').src = imgs[0];
+  document.getElementById('modalProductImg').src = imgs[0];
+  document.querySelectorAll('.thumb-img').forEach((img, i) => { img.src = imgs[i]; });
+
+  document.getElementById('offerOldPrice').textContent = `৳${CONFIG.product.oldPrice.toLocaleString('en-US')}`;
+  document.getElementById('offerPrice').textContent = `৳${CONFIG.product.price.toLocaleString('en-US')}`;
+  document.getElementById('offerDhakaCharge').textContent = CONFIG.delivery.inside;
+  document.getElementById('offerOutsideCharge').textContent = CONFIG.delivery.outside;
+  document.getElementById('stickyPrice').textContent = `৳${CONFIG.product.price.toLocaleString('en-US')}`;
+  document.getElementById('modalPriceLine').textContent = `৳${CONFIG.product.price.toLocaleString('en-US')} (regular ৳${CONFIG.product.oldPrice.toLocaleString('en-US')})`;
+  document.getElementById('zoneInsideLabel').textContent = `ডেলিভারি ৳${CONFIG.delivery.inside}`;
+  document.getElementById('zoneOutsideLabel').textContent = `ডেলিভারি ৳${CONFIG.delivery.outside}`;
+  document.getElementById('faqDeliveryText').textContent = `ঢাকার ভিতরে ৳${CONFIG.delivery.inside} এবং ঢাকার বাইরে ৳${CONFIG.delivery.outside}।`;
+}
+initFromConfig();
+
+/* ============ SHOWCASE THUMBNAILS ============ */
+const showcaseMain = document.getElementById('showcaseMain');
+document.querySelectorAll('.showcase-thumb').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.showcase-thumb').forEach(b => b.classList.remove('thumb-active'));
+    btn.classList.add('thumb-active');
+    showcaseMain.src = btn.querySelector('img').src;
+  });
+});
+
+/* ============ LIGHTBOX ============ */
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('hidden'); lb.classList.add('flex');
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  lb.classList.add('hidden'); lb.classList.remove('flex');
+}
+
+/* ============ FADE-IN ON SCROLL ============ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+/* ============ FAQ ACCORDION ============ */
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const content = trigger.nextElementSibling;
+    const icon = trigger.querySelector('i');
+    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+    document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = '0px');
+    document.querySelectorAll('.faq-trigger i').forEach(i => i.classList.remove('rotate-180'));
+    if (!isOpen) { content.style.maxHeight = content.scrollHeight + 'px'; icon.classList.add('rotate-180'); }
+  });
+});
+
+/* ============ ORDER MODAL OPEN/CLOSE ============ */
+const orderModal = document.getElementById('orderModal');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalPanel = orderModal.querySelector('.modal-panel');
+
+function openOrderModal() {
+  orderModal.classList.remove('hidden'); orderModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => { modalPanel.classList.remove('opacity-0','scale-95'); modalPanel.classList.add('opacity-100','scale-100'); });
+}
+function closeOrderModal() {
+  modalPanel.classList.remove('opacity-100','scale-100'); modalPanel.classList.add('opacity-0','scale-95');
+  setTimeout(() => { orderModal.classList.add('hidden'); orderModal.classList.remove('flex'); document.body.style.overflow=''; resetOrderForm(); }, 200);
+}
+modalOverlay.addEventListener('click', closeOrderModal);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !orderModal.classList.contains('hidden')) closeOrderModal(); });
+
+/* ============ QUANTITY ============ */
+const qtyInput = document.getElementById('qtyInput');
+document.getElementById('qtyMinus').addEventListener('click', () => { let v=parseInt(qtyInput.value,10); if(v>1){qtyInput.value=v-1; updateSummary();} });
+document.getElementById('qtyPlus').addEventListener('click', () => { let v=parseInt(qtyInput.value,10); if(v<10){qtyInput.value=v+1; updateSummary();} });
+qtyInput.addEventListener('change', updateSummary);
+
+/* ============ DELIVERY ZONE ============ */
+document.querySelectorAll('input[name="zone"]').forEach(r => r.addEventListener('change', updateSummary));
+function getDeliveryCharge() {
+  const zone = document.querySelector('input[name="zone"]:checked').value;
+  return zone === 'inside' ? CONFIG.delivery.inside : CONFIG.delivery.outside;
+}
+
+/* ============ PAYMENT SWITCHING ============ */
+const mfsFields = document.getElementById('mfsFields');
+document.querySelectorAll('input[name="payment"]').forEach(radio => {
+  radio.addEventListener('change', () => {
+    if (radio.value === 'bKash' || radio.value === 'Nagad') mfsFields.classList.remove('hidden');
+    else mfsFields.classList.add('hidden');
+  });
+});
+
+/* ============ SUMMARY CALCULATION ============ */
+function updateSummary() {
+  const qty = parseInt(qtyInput.value, 10) || 1;
+  const delivery = getDeliveryCharge();
+  const subtotal = CONFIG.product.price * qty;
+  const total = subtotal + delivery;
+  document.getElementById('sumProduct').textContent = `${CONFIG.product.name} × ${qty}`;
+  document.getElementById('sumPrice').textContent = `৳${subtotal.toLocaleString('en-US')}`;
+  document.getElementById('sumDelivery').textContent = `৳${delivery}`;
+  document.getElementById('sumTotal').textContent = `৳${total.toLocaleString('en-US')}`;
+}
+updateSummary();
+
+/* ============ VALIDATION ============ */
+function showError(el, msg) { el.classList.add('border-red-400'); const e = el.parentElement.querySelector('.error-msg'); if(e){ e.textContent = msg; e.classList.remove('hidden'); } }
+function clearError(el) { el.classList.remove('border-red-400'); const e = el.parentElement.querySelector('.error-msg'); if(e) e.classList.add('hidden'); }
+function isValidBDPhone(p) { return /^01[3-9]\d{8}$/.test(p.trim()); }
+
+function validateForm() {
+  let valid = true;
+  const name = document.getElementById('custName');
+  const phone = document.getElementById('custPhone');
+  const address = document.getElementById('custAddress');
+  [name, phone, address].forEach(clearError);
+
+  if (!name.value.trim()) { showError(name, 'দয়া করে আপনার নাম লিখুন'); valid = false; }
+  if (!phone.value.trim()) { showError(phone, 'সঠিক মোবাইল নম্বর দিন'); valid = false; }
+  else if (!isValidBDPhone(phone.value)) { showError(phone, 'সঠিক মোবাইল নম্বর দিন (যেমন: 017XXXXXXXX)'); valid = false; }
+  if (!address.value.trim()) { showError(address, 'আপনার ঠিকানা লিখুন'); valid = false; }
+  return valid;
+}
+
+/* ============ ORDER ID ============ */
+function generateOrderId() {
+  const datePart = new Date().toISOString().slice(2,10).replace(/-/g,'');
+  const randomPart = Math.floor(1000 + Math.random()*9000);
+  return `MB-${datePart}-${randomPart}`;
+}
+
+/* ============ 4) GOOGLE FORM SUBMISSION ============ */
+// Google Forms don't allow reading the response (CORS), so this fires a
+// no-cors POST — it succeeds silently as far as the browser can tell.
+async function sendToGoogleForm(order) {
+  try {
+    const fd = new FormData();
+    fd.append(CONFIG.googleForm.ENTRY_PRODUCT, order.product);
+    fd.append(CONFIG.googleForm.ENTRY_QUANTITY, String(order.qty));
+    fd.append(CONFIG.googleForm.ENTRY_NAME, order.name);
+    fd.append(CONFIG.googleForm.ENTRY_PHONE, order.phone);
+    fd.append(CONFIG.googleForm.ENTRY_ADDRESS, order.address);
+    fd.append(CONFIG.googleForm.ENTRY_PAYMENT, order.payment);
+    fd.append(CONFIG.googleForm.ENTRY_TOTAL, String(order.total));
+    await fetch(CONFIG.googleForm.URL, { method: 'POST', mode: 'no-cors', body: fd });
+  } catch (err) {
+    console.warn('Google Form submission failed:', err);
+  }
+}
+
+/* ============ 5) TELEGRAM VIA GOOGLE APPS SCRIPT ============ */
+async function sendToAppsScript(order) {
+  try {
+    await fetch(CONFIG.appsScript.URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: [
+          "🛍️ NEW ORDER", "",
+          "Order ID: " + order.orderId,
+          "Product: " + order.product,
+          "Quantity: " + order.qty,
+          "Customer Name: " + order.name,
+          "Phone: " + order.phone,
+          "Address: " + order.address,
+          "Payment Method: " + order.payment,
+          "Total: ৳" + order.total,
+          "Order Time: " + order.time
+        ].join("\n")
+      })
+    });
+  } catch (err) {
+    console.warn('Apps Script / Telegram notification failed:', err);
+  }
+}
+
+/* ============ FORM SUBMISSION ============ */
+const orderForm = document.getElementById('orderForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitBtnText = document.getElementById('submitBtnText');
+
+orderForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (isSubmitting) return;
+  if (!validateForm()) return;
+
+  isSubmitting = true;
+  submitBtn.disabled = true;
+  submitBtn.classList.add('opacity-70','cursor-not-allowed');
+  submitBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> প্রসেস হচ্ছে...';
+
+  const qty = parseInt(qtyInput.value, 10) || 1;
+  const delivery = getDeliveryCharge();
+  const subtotal = CONFIG.product.price * qty;
+  const total = subtotal + delivery;
+  const payment = document.querySelector('input[name="payment"]:checked').value;
+
+  const order = {
+    product: CONFIG.product.name,
+    qty,
+    name: document.getElementById('custName').value.trim(),
+    phone: document.getElementById('custPhone').value.trim(),
+    address: document.getElementById('custAddress').value.trim(),
+    payment,
+    subtotal, deliveryCharge: delivery, total,
+    orderId: generateOrderId(),
+    time: new Date().toLocaleString('bn-BD', { dateStyle: 'medium', timeStyle: 'short' })
+  };
+
+  await Promise.all([ sendToGoogleForm(order), sendToAppsScript(order) ]);
+
+  setTimeout(() => {
+    document.getElementById('formView').classList.add('hidden');
+    document.getElementById('successView').classList.remove('hidden');
+    document.getElementById('orderIdDisplay').textContent = order.orderId;
+    isSubmitting = false;
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('opacity-70','cursor-not-allowed');
+    submitBtnText.textContent = 'অর্ডার কনফার্ম করুন';
+  }, 600);
+});
+
+function resetOrderForm() {
+  orderForm.reset();
+  qtyInput.value = 1;
+  mfsFields.classList.add('hidden');
+  document.querySelectorAll('.error-msg').forEach(e => e.classList.add('hidden'));
+  document.querySelectorAll('input, textarea').forEach(i => i.classList.remove('border-red-400'));
+  document.getElementById('formView').classList.remove('hidden');
+  document.getElementById('successView').classList.add('hidden');
+  updateSummary();
+}
+</script>
+
+</body>
+</html>
