@@ -874,13 +874,46 @@ function generateOrderId() {
   return `V${counter}`;
 }
 
+function escapeHtml(str) {
+  return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function buildOrderMessage(order) {
+  const itemsText = order.items.map((l, i) => {
+    const v = variantLabel(l.variant);
+    return `${i + 1}. ${escapeHtml(l.name)}${v ? ' (' + escapeHtml(v) + ')' : ''} × ${l.qty} — ৳${l.price * l.qty}`;
+  }).join('\n');
+
+  const paymentLines = (order.payment === 'bKash' || order.payment === 'Nagad')
+    ? `💳 Payment: ${order.payment}\n📱 Merchant Number: ${order.merchantPaymentNumber}\n🔢 Transaction ID: ${escapeHtml(order.trxId)}`
+    : `💳 Payment: ক্যাশ অন ডেলিভারি`;
+
+  return `<b>🛒 নতুন অর্ডার — ${order.orderId}</b>
+🕒 ${order.time}
+
+👤 ${escapeHtml(order.customer.name)}
+📞 ${escapeHtml(order.customer.phone)}
+🏠 ${escapeHtml(order.customer.address)}
+🚚 জোন: ${order.deliveryZone === 'inside' ? 'ঢাকার ভিতরে' : 'ঢাকার বাইরে'}
+
+<b>পণ্য:</b>
+${itemsText}
+
+${paymentLines}
+
+সাবটোটাল: ৳${order.subtotal}
+ডেলিভারি চার্জ: ৳${order.deliveryCharge}
+<b>সর্বমোট: ৳${order.total}</b>`;
+}
+
 async function sendOrderToBackend(order) {
   try {
-    await fetch(BACKEND_CONFIG.ENDPOINT, {
+    const res = await fetch(BACKEND_CONFIG.ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(order)
+      body: JSON.stringify({ text: buildOrderMessage(order) })
     });
+    if (!res.ok) console.warn('Order backend responded with an error status:', res.status);
   } catch (err) {
     console.warn('Order could not be sent to backend:', err);
   }
