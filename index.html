@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#f85606">
+<title>Vendorify BD — অনলাইন শপ | সারাদেশে ক্যাশ অন ডেলিভারি</title>
+<meta name="description" content="Vendorify BD — গ্যাজেট ও হোম ডেকর প্রোডাক্টের অনলাইন শপ। সারাদেশে ক্যাশ অন ডেলিভারি সুবিধাসহ।">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{ --brand:#f85606; --brand-dark:#d84a04; --brand-light:#fff1e8; --ink:#1a1a1a; --paper:#f5f5f5; color-scheme: light only; }
+html{ color-scheme: light only; }
+*{font-family:'Hind Siliguri', sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper); color:var(--ink);}
+input, textarea, select, button{ color-scheme: light only; background-color:#fff; color:var(--ink); }
+.text-brand{color:var(--brand);}
+.bg-brand{background-color:var(--brand);}
+.border-brand{border-color:var(--brand);}
+
+.marquee-track{ display:flex; width:max-content; animation:marquee 24s linear infinite; }
+@keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+.card-lift{ transition:transform .2s ease, box-shadow .2s ease; }
+.card-lift:hover{ transform:translateY(-4px); box-shadow:0 14px 28px -12px rgba(248,86,6,.22); }
+
+.drawer{ transition:transform .3s cubic-bezier(.2,.9,.3,1); }
+.drawer-hidden{ transform:translateX(100%); }
+.modal-fade{ transition:opacity .2s ease; }
+.modal-panel{ transition:transform .25s cubic-bezier(.2,.9,.3,1), opacity .25s ease; }
+
+.thumb-active{ border-color:var(--brand) !important; }
+::-webkit-scrollbar{ width:6px; }
+::-webkit-scrollbar-thumb{ background:#e2b8a6; border-radius:99px; }
+.pb-safe{ padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--brand); outline-offset:2px;
+}
+</style>
+</head>
+<body class="antialiased bg-[--paper] text-[--ink]">
+
+<!-- ================= ANNOUNCEMENT BAR ================= -->
+<div class="bg-[#c53d13] text-white text-xs sm:text-sm">
+  <div class="overflow-hidden">
+    <div class="marquee-track py-2">
+      <div class="flex items-center gap-10 px-6">
+        <span><i class="fa-solid fa-truck-fast mr-2"></i>সারাদেশে ক্যাশ অন ডেলিভারি</span>
+        <span><i class="fa-solid fa-shield-halved mr-2"></i>১০০% অরিজিনাল প্রোডাক্ট</span>
+        <span><i class="fa-solid fa-bolt mr-2"></i>ফাস্ট ডেলিভারি সারাদেশে</span>
+      </div>
+      <div class="flex items-center gap-10 px-6" aria-hidden="true">
+        <span><i class="fa-solid fa-truck-fast mr-2"></i>সারাদেশে ক্যাশ অন ডেলিভারি</span>
+        <span><i class="fa-solid fa-shield-halved mr-2"></i>১০০% অরিজিনাল প্রোডাক্ট</span>
+        <span><i class="fa-solid fa-bolt mr-2"></i>ফাস্ট ডেলিভারি সারাদেশে</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header id="navbar" class="sticky top-0 z-40 bg-white border-b border-slate-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 gap-3">
+      <a href="#home" class="flex items-center gap-2 shrink-0">
+        <span class="w-9 h-9 rounded-xl bg-brand flex items-center justify-center text-white font-bold">V</span>
+        <span class="font-bold text-lg tracking-tight hidden sm:inline text-[--ink]">Vendorify</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 shrink-0">
+        <a href="#home" class="hover:text-brand transition-colors">Home</a>
+        <a href="#products" class="hover:text-brand transition-colors">Products</a>
+      </nav>
+
+      <div class="hidden md:flex flex-1 max-w-sm relative">
+        <input id="searchInputDesktop" type="text" placeholder="প্রোডাক্ট খুঁজুন..." class="w-full bg-slate-100 border-none rounded-full pl-10 pr-4 py-2 text-sm outline-none focus:ring-2 focus:ring-brand text-[--ink]">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+      </div>
+
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <button id="searchToggleBtn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-slate-600" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button id="cartBtn" class="relative w-10 h-10 flex items-center justify-center rounded-lg text-slate-600" aria-label="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartBadge" class="hidden absolute -top-0.5 -right-0.5 bg-brand text-white text-[10px] font-bold w-4.5 h-4.5 min-w-[18px] px-1 rounded-full flex items-center justify-center">0</span>
+        </button>
+        <button id="hamburgerBtn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-slate-600" aria-label="Menu"><i class="fa-solid fa-bars text-lg"></i></button>
+      </div>
+    </div>
+
+    <div id="mobileSearchWrap" class="hidden md:hidden pb-3 relative">
+      <input id="searchInputMobile" type="text" placeholder="প্রোডাক্ট খুঁজুন..." class="w-full bg-slate-100 border-none rounded-full pl-10 pr-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-brand text-[--ink]">
+      <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white">
+    <div class="px-4 py-3">
+      <a href="#home" class="mobile-link block py-2.5 border-b border-slate-50 font-medium">Home</a>
+      <a href="#products" class="mobile-link block py-2.5 border-b border-slate-50 font-medium">All Products</a>
+      <p class="text-xs text-slate-400 uppercase font-semibold pt-3 pb-1">ক্যাটেগরি</p>
+      <button class="cat-filter-mobile w-full text-left py-2 text-sm" data-cat="all">সব প্রোডাক্ট</button>
+      <button class="cat-filter-mobile w-full text-left py-2 text-sm" data-cat="gadget">গ্যাজেট</button>
+      <button class="cat-filter-mobile w-full text-left py-2 text-sm" data-cat="home-decor">হোম ডেকর</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="bg-gradient-to-r from-[#f85606] to-[#ff8a3d] py-10 sm:py-14">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+   
+    <h1 class="text-2xl sm:text-4xl font-bold mb-3 text-white">Vendorify BD</h1>
+    <p class="text-white/90 max-w-xl mx-auto mb-6">আপনার প্রয়োজনীয় সবকিছু, এক জায়গায়</p>
+    <a href="#products" class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-brand font-semibold px-6 py-3 rounded-full transition-colors">
+      শপিং শুরু করুন <i class="fa-solid fa-arrow-down"></i>
+    </a>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section id="products" class="py-12 sm:py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <h2 class="text-xl sm:text-2xl font-bold">আমাদের প্রোডাক্টসমূহ</h2>
+      <div class="flex items-center gap-2 overflow-x-auto" id="catFilterDesktop">
+        <button class="cat-filter active-cat px-4 py-2 rounded-full text-sm font-medium bg-brand text-white whitespace-nowrap" data-cat="all">সব প্রোডাক্ট</button>
+        <button class="cat-filter px-4 py-2 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-600 whitespace-nowrap" data-cat="gadget">গ্যাজেট</button>
+        <button class="cat-filter px-4 py-2 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-600 whitespace-nowrap" data-cat="home-decor">হোম ডেকর</button>
+      </div>
+    </div>
+
+    <div id="productGrid" class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+    <p id="noResults" class="hidden text-center text-slate-400 py-16">কোনো প্রোডাক্ট পাওয়া যায়নি</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-[#1a1a1a] border-t border-white/5 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-sm">V</span>
+      <span class="font-bold text-white">Vendorify BD</span>
+    </div>
+    <p class="text-slate-400 text-sm">© 2026 Vendorify BD</p>
+    <div class="flex items-center gap-4 text-slate-400">
+      <i class="fa-brands fa-facebook hover:text-brand cursor-pointer transition-colors"></i>
+      <i class="fa-brands fa-whatsapp hover:text-brand cursor-pointer transition-colors"></i>
+      <i class="fa-solid fa-phone hover:text-brand cursor-pointer transition-colors"></i>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= PRODUCT DETAILS MODAL ================= -->
+<div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 sm:p-4 modal-fade">
+  <div class="pm-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+  <div class="modal-panel opacity-0 scale-95 relative bg-white w-full sm:max-w-lg sm:rounded-3xl rounded-t-3xl max-h-[92vh] overflow-y-auto shadow-2xl">
+    <div class="sticky top-0 bg-white z-10 flex items-center justify-between px-5 py-4 border-b border-slate-100">
+      <h3 class="font-bold">প্রোডাক্ট ডিটেইলস</h3>
+      <button class="pm-close w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-500" aria-label="Close"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+    <div class="p-5 space-y-5">
+      <img id="pmImage" src="" alt="" class="w-full aspect-square object-cover rounded-2xl">
+      <div>
+        <span id="pmCategory" class="text-brand text-xs font-semibold"></span>
+        <h4 id="pmName" class="text-lg font-bold mt-1 mb-2"></h4>
+        <div class="flex items-center gap-3">
+          <span id="pmPrice" class="text-2xl font-bold"></span>
+          <span id="pmOldPrice" class="text-slate-400 line-through"></span>
+        </div>
+      </div>
+
+      <div id="pmVariants" class="space-y-4"></div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-2">পরিমাণ</label>
+        <div class="flex items-center gap-3">
+          <button type="button" id="pmQtyMinus" class="w-11 h-11 rounded-xl border border-slate-200 flex items-center justify-center font-bold hover:bg-slate-50">−</button>
+          <input type="number" id="pmQtyInput" value="1" min="1" max="10" class="w-16 text-center border border-slate-200 rounded-xl py-2.5 font-semibold" readonly>
+          <button type="button" id="pmQtyPlus" class="w-11 h-11 rounded-xl border border-slate-200 flex items-center justify-center font-bold hover:bg-slate-50">+</button>
+        </div>
+      </div>
+
+      <p id="pmError" class="hidden text-xs text-red-500"></p>
+
+      <div class="grid grid-cols-2 gap-3">
+        <button id="pmAddToCart" class="w-full bg-white border-2 border-brand text-brand font-bold py-3.5 rounded-full transition-colors hover:bg-brand-light">
+          <i class="fa-solid fa-cart-plus mr-1.5"></i> কার্টে যোগ করুন
+        </button>
+        <button id="pmOrderNow" class="w-full bg-brand hover:bg-[--brand-dark] text-white font-bold py-3.5 rounded-full transition-colors">
+          <i class="fa-solid fa-bolt mr-1.5"></i> অর্ডার করুন
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CART DRAWER ================= -->
+<div id="cartDrawerWrap" class="fixed inset-0 z-50 hidden">
+  <div class="cd-overlay absolute inset-0 bg-black/50"></div>
+  <div id="cartDrawer" class="drawer drawer-hidden absolute right-0 top-0 bottom-0 w-full sm:w-[420px] bg-white shadow-2xl flex flex-col">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-slate-100">
+      <h3 class="font-bold text-lg"><i class="fa-solid fa-cart-shopping text-brand mr-2"></i>আপনার কার্ট</h3>
+      <button class="cd-close w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-500" aria-label="Close"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+
+    <div id="cartItemsWrap" class="flex-1 overflow-y-auto px-5 py-4 space-y-4"></div>
+
+    <div id="cartEmpty" class="hidden flex-1 flex-col items-center justify-center text-center px-6 text-slate-400">
+      <i class="fa-solid fa-cart-shopping text-4xl mb-3"></i>
+      <p>আপনার কার্ট খালি</p>
+    </div>
+
+    <div id="cartFooter" class="border-t border-slate-100 p-5 space-y-3">
+      <div class="flex justify-between font-semibold">
+        <span>সাবটোটাল</span>
+        <span id="cartSubtotal" class="text-brand">৳0</span>
+      </div>
+      <button id="checkoutBtn" class="w-full bg-brand hover:bg-[--brand-dark] text-white font-bold py-3.5 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed">চেকআউট করুন</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CHECKOUT MODAL ================= -->
+<div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 sm:p-4 modal-fade">
+  <div class="co-overlay absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+  <div class="modal-panel opacity-0 scale-95 relative bg-white w-full sm:max-w-lg sm:rounded-3xl rounded-t-3xl max-h-[92vh] overflow-y-auto shadow-2xl">
+
+    <div class="sticky top-0 bg-white z-10 flex items-center justify-between px-5 py-4 border-b border-slate-100">
+      <h3 class="font-bold"><i class="fa-solid fa-bag-shopping text-brand mr-2"></i>চেকআউট</h3>
+      <button class="co-close w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-500" aria-label="Close"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+
+    <div id="checkoutFormView">
+      <form id="checkoutForm" class="px-5 py-5 space-y-5" novalidate>
+
+        <div id="coItemsPreview" class="space-y-3"></div>
+
+        <div class="space-y-4 pt-2 border-t border-slate-100">
+          <p class="text-sm font-semibold pt-1">আপনার তথ্য দিন</p>
+          <div>
+            <label for="coName" class="block text-xs font-medium text-slate-500 mb-1.5">পূর্ণ নাম *</label>
+            <input id="coName" type="text" placeholder="আপনার নাম লিখুন" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none">
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+          <div>
+            <label for="coPhone" class="block text-xs font-medium text-slate-500 mb-1.5">মোবাইল নম্বর *</label>
+            <input id="coPhone" type="tel" inputmode="numeric" placeholder="01XXXXXXXXX" maxlength="11" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none">
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+          <div>
+            <label for="coAddress" class="block text-xs font-medium text-slate-500 mb-1.5">সম্পূর্ণ ঠিকানা (জেলা, থানা, এলাকা) *</label>
+            <textarea id="coAddress" rows="2" placeholder="যেমন: ঢাকা, ধানমন্ডি, রোড ৫, বাসা ১২" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none resize-none"></textarea>
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2">ডেলিভারি এলাকা *</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="cursor-pointer">
+              <input type="radio" name="zone" value="inside" class="peer hidden" checked>
+              <div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center transition-colors">
+                <p class="text-sm font-semibold">ঢাকার ভিতরে</p>
+                <p class="text-xs text-slate-400" id="zoneInsideLabel"></p>
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="zone" value="outside" class="peer hidden">
+              <div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center transition-colors">
+                <p class="text-sm font-semibold">ঢাকার বাইরে</p>
+                <p class="text-xs text-slate-400" id="zoneOutsideLabel"></p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="space-y-3 pt-2 border-t border-slate-100">
+          <p class="text-sm font-semibold pt-1">পেমেন্ট পদ্ধতি *</p>
+          <div class="grid grid-cols-3 gap-3">
+            <label class="cursor-pointer"><input type="radio" name="payment" value="COD" class="peer hidden" checked><div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center text-xs font-medium transition-colors flex flex-col items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> COD</div></label>
+            <label class="cursor-pointer"><input type="radio" name="payment" value="bKash" class="peer hidden"><div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center text-xs font-medium transition-colors flex flex-col items-center gap-1"><i class="fa-solid fa-mobile-screen-button"></i> bKash</div></label>
+            <label class="cursor-pointer"><input type="radio" name="payment" value="Nagad" class="peer hidden"><div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center text-xs font-medium transition-colors flex flex-col items-center gap-1"><i class="fa-solid fa-wallet"></i> Nagad</div></label>
+          </div>
+          <div id="mfsFields" class="hidden bg-[#fff1e8] rounded-xl p-4 space-y-3">
+            <p class="text-xs text-slate-600 leading-relaxed">
+              <span id="mfsNumberLine" class="font-semibold text-slate-800"></span><br>
+              এই নম্বরে <b>Send Money</b> করে নিচে Transaction ID দিন।
+            </p>
+            <div>
+              <label for="mfsTrxId" class="block text-xs font-medium text-slate-500 mb-1.5">Transaction ID *</label>
+              <input id="mfsTrxId" type="text" placeholder="যেমন: 8N7A9X2K1L" class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:border-brand outline-none bg-white">
+              <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-4 space-y-2 text-sm">
+          <div class="flex justify-between text-slate-500"><span>প্রোডাক্ট সাবটোটাল</span><span id="coSubtotal" class="font-medium text-slate-800"></span></div>
+          <div class="flex justify-between text-slate-500"><span>ডেলিভারি চার্জ</span><span id="coDelivery" class="font-medium text-slate-800"></span></div>
+          <div class="flex justify-between font-bold pt-2 border-t border-slate-200"><span>সর্বমোট</span><span id="coTotal" class="text-brand"></span></div>
+        </div>
+
+        <button type="submit" id="coSubmitBtn" class="w-full bg-brand hover:bg-[--brand-dark] text-white font-bold py-4 rounded-full transition-colors">
+          <span id="coSubmitText">অর্ডার কনফার্ম করুন</span>
+        </button>
+      </form>
+    </div>
+
+    <div id="checkoutSuccessView" class="hidden px-6 py-8 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-green-100 text-green-600 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-check"></i></div>
+      <h3 class="text-xl font-bold mb-2">🎉 আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে!</h3>
+      <p class="text-slate-500 text-sm mb-4">আমাদের প্রতিনিধি খুব শীঘ্রই আপনার সাথে যোগাযোগ করবেন।</p>
+
+      <div id="successItemsPreview" class="space-y-2 mb-2 text-left bg-slate-50 rounded-2xl p-3"></div>
+
+      <div class="flex justify-between items-center bg-[#fff1e8] rounded-xl py-3 px-4 mb-4">
+        <span class="text-sm font-semibold">সর্বমোট বিল</span>
+        <span id="orderTotalDisplay" class="font-bold text-brand text-lg"></span>
+      </div>
+
+      <div class="bg-slate-50 rounded-xl py-3 px-4 inline-block mb-2">
+        <p class="text-xs text-slate-400">Order ID</p>
+        <p id="orderIdDisplay" class="font-bold text-brand text-lg"></p>
+      </div>
+      <p id="orderTimeDisplay" class="text-xs text-slate-400 mb-6"></p>
+      <button id="continueShoppingBtn" class="w-full bg-[#1a1a1a] hover:opacity-90 text-white font-bold py-3.5 rounded-full transition-opacity">কন্টিনিউ শপিং</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MOBILE STICKY CART BAR ================= -->
+<div id="mobileCartBar" class="hidden fixed bottom-0 inset-x-0 z-30 sm:hidden bg-white border-t border-slate-100 shadow-[0_-8px_20px_rgba(0,0,0,.06)] pb-safe">
+  <div class="flex items-center gap-3 px-4 py-3">
+    <div class="flex-1">
+      <p class="text-[11px] text-slate-400 leading-none">কার্ট</p>
+      <p id="mobileCartCount" class="font-bold">0 আইটেম — ৳0</p>
+    </div>
+    <button id="mobileCartBtn" class="bg-brand text-white font-bold px-6 py-3 rounded-full text-sm"><i class="fa-solid fa-cart-shopping mr-1"></i> দেখুন</button>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   CONFIG — edit merchant payment numbers, products, delivery here
+========================================================= */
+const MERCHANT_PAYMENT = {
+  bKash: "01775779942 (Personal)",
+  Nagad: "01832541023 (Personal)"
+};
+
+const PRODUCTS = [ {
+    id: 'medicine-box',
+    name: 'প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স',
+    category: 'home-decor',
+    categoryLabel: 'হোম ডেকর',
+    price: 550,
+    oldPrice: 850,
+    image: 'https://i.ibb.co.com/gMFhbmKH/1789231480912.jpg',
+    variants: {},
+  },
+  {
+    id: 'Pedal Cycle',
+    name: 'মিনি পেডাল সাইকেল',
+    category: 'gadget',
+    categoryLabel: 'গ্যাজেট',
+    price: 1950,
+    oldPrice: 2999,
+    image: 'https://i.ibb.co.com/7tPWgwGx/1789757636808.jpg',
+    variants: {},
+  },
+  {
+    id: 'Massager',
+    name: 'নেক অ্যান্ড শোল্ডার ম্যাসাজার',
+    category: 'gadget',
+    categoryLabel: 'গ্যাজেট',
+    price: 1850,
+    oldPrice: 2250,
+    image: 'https://i.ibb.co.com/bYsxFyg/1789151284950.jpg',
+    variants: {},
+  },
+  {
+    id: 'oil aplicator',
+    name: 'সিরাম ও অয়েল অ্যাপ্লিকেটর চিরুনি',
+    category: 'home-decor',
+    categoryLabel: 'হোম ডেকর',
+    price: 350,
+    oldPrice: 600,
+    image: 'https://i.ibb.co.com/jk6nhmXm/IMG-20260912-144035.png',
+    variants: { color: ['White'], size: ['Large'] }
+  },
+  {
+    id: 'nebulizer',
+    name: 'নেবুলাইজার মেশিন',
+    category: 'gadget',
+    categoryLabel: 'গ্যাজেট',
+    price: 700,
+    oldPrice: 1200,
+    image: 'https://i.ibb.co.com/JwHBF68k/IMG-20260918-211038.jpg',
+    variants: {},
+  },
+];
+
+const DELIVERY_CHARGE = { inside: 60, outside: 120 };
+// Placeholder — route through a secure backend/serverless proxy, never expose a real token client-side.
+const BACKEND_CONFIG = { ENDPOINT: '/api/send-order' };
+
+let currentCategory = 'all';
+let currentSearch = '';
+let activeProduct = null;
+let activeVariant = {};
+let isSubmittingOrder = false;
+let checkoutSource = 'cart';   // 'cart' or 'buynow'
+let buyNowItem = null;
+
+/* =========================================================
+   LOCALSTORAGE — cart persistence
+========================================================= */
+function loadCart() {
+  try { return JSON.parse(localStorage.getItem('vendorify_cart')) || []; }
+  catch (e) { return []; }
+}
+function saveCart(cart) {
+  try { localStorage.setItem('vendorify_cart', JSON.stringify(cart)); } catch (e) {}
+}
+let cart = loadCart();
+
+/* =========================================================
+   HEADER / MOBILE MENU / SEARCH
+========================================================= */
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+document.getElementById('searchToggleBtn').addEventListener('click', () => {
+  document.getElementById('mobileSearchWrap').classList.toggle('hidden');
+});
+
+const searchDesktop = document.getElementById('searchInputDesktop');
+const searchMobile = document.getElementById('searchInputMobile');
+[searchDesktop, searchMobile].forEach(input => {
+  input.addEventListener('input', (e) => {
+    currentSearch = e.target.value.trim().toLowerCase();
+    if (searchDesktop !== input) searchDesktop.value = e.target.value;
+    if (searchMobile !== input) searchMobile.value = e.target.value;
+    renderProducts();
+  });
+});
+
+document.querySelectorAll('.cat-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentCategory = btn.dataset.cat;
+    document.querySelectorAll('.cat-filter').forEach(b => {
+      b.classList.remove('bg-brand', 'text-white', 'active-cat');
+      b.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+    });
+    btn.classList.add('bg-brand', 'text-white', 'active-cat');
+    btn.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+    renderProducts();
+  });
+});
+document.querySelectorAll('.cat-filter-mobile').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentCategory = btn.dataset.cat;
+    mobileMenu.classList.add('hidden');
+    document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    renderProducts();
+  });
+});
+
+/* =========================================================
+   RENDER PRODUCT GRID
+========================================================= */
+function renderProducts() {
+  const grid = document.getElementById('productGrid');
+  const noResults = document.getElementById('noResults');
+  const filtered = PRODUCTS.filter(p => {
+    const matchCat = currentCategory === 'all' || p.category === currentCategory;
+    const matchSearch = !currentSearch || p.name.toLowerCase().includes(currentSearch);
+    return matchCat && matchSearch;
+  });
+
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card bg-white border border-slate-100 rounded-2xl overflow-hidden card-lift">
+      <div class="aspect-square overflow-hidden bg-slate-50 cursor-pointer product-card-img" data-id="${p.id}">
+        <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" loading="lazy">
+      </div>
+      <div class="p-3 sm:p-4">
+        <span class="text-[11px] text-brand font-semibold">${p.categoryLabel}</span>
+        <h3 class="product-card-img font-semibold text-sm sm:text-base mt-0.5 mb-1.5 line-clamp-2 cursor-pointer" data-id="${p.id}">${p.name}</h3>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="font-bold text-brand">৳${p.price.toLocaleString('en-US')}</span>
+          <span class="text-xs text-slate-400 line-through">৳${p.oldPrice.toLocaleString('en-US')}</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <button class="card-order-now bg-brand text-white text-xs font-bold py-2 rounded-full" data-id="${p.id}">অর্ডার করুন</button>
+          <button class="card-add-cart border-2 border-brand text-brand text-xs font-bold py-2 rounded-full" data-id="${p.id}">কার্ট</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  document.querySelectorAll('.product-card-img').forEach(el => el.addEventListener('click', () => openProductModal(el.dataset.id, 'view')));
+  document.querySelectorAll('.card-add-cart').forEach(el => el.addEventListener('click', () => quickAddToCart(el.dataset.id)));
+  document.querySelectorAll('.card-order-now').forEach(el => el.addEventListener('click', () => quickOrderNow(el.dataset.id)));
+
+  grid.classList.toggle('hidden', filtered.length === 0);
+  noResults.classList.toggle('hidden', filtered.length !== 0);
+}
+renderProducts();
+
+/* =========================================================
+   QUICK ACTIONS — card-level Cart / Order Now (no popup for variant pick)
+========================================================= */
+function defaultVariantFor(product) {
+  const variant = {};
+  Object.keys(product.variants || {}).forEach(key => { variant[key] = product.variants[key][0]; });
+  return variant;
+}
+
+function quickAddToCart(productId) {
+  const p = PRODUCTS.find(x => x.id === productId);
+  if (!p) return;
+  addToCart(p, defaultVariantFor(p), 1);
+}
+
+function quickOrderNow(productId) {
+  const p = PRODUCTS.find(x => x.id === productId);
+  if (!p) return;
+  buyNowItem = {
+    key: 'buynow::' + p.id,
+    productId: p.id,
+    name: p.name,
+    image: p.image,
+    price: p.price,
+    variant: defaultVariantFor(p),
+    qty: 1
+  };
+  checkoutSource = 'buynow';
+  renderCheckoutPreview();
+  updateCheckoutSummary();
+  openModalEl(checkoutModal);
+}
+
+/* =========================================================
+   PRODUCT DETAILS MODAL
+========================================================= */
+const productModal = document.getElementById('productModal');
+function openModalEl(modalEl) {
+  modalEl.classList.remove('hidden'); modalEl.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  const panel = modalEl.querySelector('.modal-panel');
+  requestAnimationFrame(() => { panel.classList.remove('opacity-0', 'scale-95'); panel.classList.add('opacity-100', 'scale-100'); });
+}
+function closeModalEl(modalEl, after) {
+  const panel = modalEl.querySelector('.modal-panel');
+  panel.classList.remove('opacity-100', 'scale-100'); panel.classList.add('opacity-0', 'scale-95');
+  setTimeout(() => { modalEl.classList.add('hidden'); modalEl.classList.remove('flex'); document.body.style.overflow = ''; if (after) after(); }, 200);
+}
+
+let pendingIntent = 'cart'; // 'cart' or 'buynow' — set by which button opened the modal
+
+function openProductModal(productId, intent) {
+  const p = PRODUCTS.find(x => x.id === productId);
+  if (!p) return;
+  activeProduct = p;
+  activeVariant = {};
+  pendingIntent = intent === 'buynow' ? 'buynow' : 'cart';
+
+  document.getElementById('pmImage').src = p.image;
+  document.getElementById('pmImage').alt = p.name;
+  document.getElementById('pmCategory').textContent = p.categoryLabel;
+  document.getElementById('pmName').textContent = p.name;
+  document.getElementById('pmPrice').textContent = `৳${p.price.toLocaleString('en-US')}`;
+  document.getElementById('pmOldPrice').textContent = `৳${p.oldPrice.toLocaleString('en-US')}`;
+  document.getElementById('pmQtyInput').value = 1;
+  document.getElementById('pmError').classList.add('hidden');
+
+  const variantsWrap = document.getElementById('pmVariants');
+  variantsWrap.innerHTML = '';
+  Object.keys(p.variants).forEach(key => {
+    const options = p.variants[key];
+    activeVariant[key] = null;
+    const label = key === 'color' ? 'রঙ (Color)' : key === 'size' ? 'সাইজ (Size)' : key;
+    const group = document.createElement('div');
+    group.innerHTML = `
+      <label class="block text-sm font-semibold mb-2">${label}</label>
+      <div class="flex flex-wrap gap-2 pm-variant-group" data-key="${key}">
+        ${options.map(opt => `<button type="button" class="pm-variant-btn px-4 py-2 rounded-xl border-2 border-slate-200 text-sm font-medium" data-key="${key}" data-value="${opt}">${opt}</button>`).join('')}
+      </div>`;
+    variantsWrap.appendChild(group);
+  });
+
+  variantsWrap.querySelectorAll('.pm-variant-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.key, value = btn.dataset.value;
+      activeVariant[key] = value;
+      variantsWrap.querySelectorAll(`.pm-variant-btn[data-key="${key}"]`).forEach(b => {
+        b.classList.remove('border-brand', 'bg-[#fff1e8]', 'text-brand');
+        b.classList.add('border-slate-200');
+      });
+      btn.classList.remove('border-slate-200');
+      btn.classList.add('border-brand', 'bg-[#fff1e8]', 'text-brand');
+      document.getElementById('pmError').classList.add('hidden');
+    });
+  });
+
+  openModalEl(productModal);
+}
+productModal.querySelector('.pm-close').addEventListener('click', () => closeModalEl(productModal));
+productModal.querySelector('.pm-overlay').addEventListener('click', () => closeModalEl(productModal));
+
+const pmQtyInput = document.getElementById('pmQtyInput');
+document.getElementById('pmQtyMinus').addEventListener('click', () => { let v = parseInt(pmQtyInput.value,10); if (v>1) pmQtyInput.value = v-1; });
+document.getElementById('pmQtyPlus').addEventListener('click', () => { let v = parseInt(pmQtyInput.value,10); if (v<10) pmQtyInput.value = v+1; });
+
+function checkVariantsSelected() {
+  const missing = Object.keys(activeVariant).find(k => !activeVariant[k]);
+  if (missing) {
+    const label = missing === 'color' ? 'রঙ' : missing === 'size' ? 'সাইজ' : missing;
+    const err = document.getElementById('pmError');
+    err.textContent = `দয়া করে ${label} নির্বাচন করুন`;
+    err.classList.remove('hidden');
+    return false;
+  }
+  return true;
+}
+
+document.getElementById('pmAddToCart').addEventListener('click', () => {
+  if (!activeProduct || !checkVariantsSelected()) return;
+  const qty = parseInt(pmQtyInput.value, 10) || 1;
+  addToCart(activeProduct, { ...activeVariant }, qty);
+  closeModalEl(productModal);
+  openCartDrawer();
+});
+
+document.getElementById('pmOrderNow').addEventListener('click', () => {
+  if (!activeProduct || !checkVariantsSelected()) return;
+  const qty = parseInt(pmQtyInput.value, 10) || 1;
+  buyNowItem = {
+    key: 'buynow::' + activeProduct.id,
+    productId: activeProduct.id,
+    name: activeProduct.name,
+    image: activeProduct.image,
+    price: activeProduct.price,
+    variant: { ...activeVariant },
+    qty
+  };
+  checkoutSource = 'buynow';
+  closeModalEl(productModal, () => {
+    renderCheckoutPreview();
+    updateCheckoutSummary();
+    openModalEl(checkoutModal);
+  });
+});
+
+/* =========================================================
+   CART LOGIC
+========================================================= */
+function cartLineKey(productId, variant) {
+  return productId + '::' + JSON.stringify(variant);
+}
+function addToCart(product, variant, qty) {
+  const key = cartLineKey(product.id, variant);
+  const existing = cart.find(l => l.key === key);
+  if (existing) { existing.qty += qty; }
+  else {
+    cart.push({ key, productId: product.id, name: product.name, image: product.image, price: product.price, variant, qty });
+  }
+  saveCart(cart);
+  renderCart();
+}
+function updateCartQty(key, delta) {
+  const line = cart.find(l => l.key === key);
+  if (!line) return;
+  line.qty += delta;
+  if (line.qty <= 0) cart = cart.filter(l => l.key !== key);
+  saveCart(cart);
+  renderCart();
+}
+function removeCartLine(key) {
+  cart = cart.filter(l => l.key !== key);
+  saveCart(cart);
+  renderCart();
+}
+function cartSubtotal() {
+  return cart.reduce((sum, l) => sum + l.price * l.qty, 0);
+}
+function cartCount() {
+  return cart.reduce((sum, l) => sum + l.qty, 0);
+}
+function variantLabel(variant) {
+  const parts = Object.values(variant || {}).filter(Boolean);
+  return parts.length ? parts.join(' / ') : '';
+}
+
+function renderCart() {
+  const wrap = document.getElementById('cartItemsWrap');
+  const empty = document.getElementById('cartEmpty');
+  const footer = document.getElementById('cartFooter');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+
+  if (cart.length === 0) {
+    wrap.classList.add('hidden'); footer.classList.add('hidden');
+    empty.classList.remove('hidden'); empty.classList.add('flex');
+  } else {
+    wrap.classList.remove('hidden'); footer.classList.remove('hidden');
+    empty.classList.add('hidden'); empty.classList.remove('flex');
+    wrap.innerHTML = cart.map(l => `
+      <div class="flex gap-3 border-b border-slate-100 pb-4">
+        <img src="${l.image}" alt="${l.name}" class="w-16 h-16 rounded-xl object-cover shrink-0">
+        <div class="flex-1 min-w-0">
+          <p class="font-medium text-sm truncate">${l.name}</p>
+          ${variantLabel(l.variant) ? `<p class="text-xs text-slate-400">${variantLabel(l.variant)}</p>` : ''}
+          <p class="text-brand font-bold text-sm mt-1">৳${l.price.toLocaleString('en-US')}</p>
+          <div class="flex items-center gap-2 mt-2">
+            <button class="cart-qty-minus w-7 h-7 rounded-lg border border-slate-200 text-sm font-bold" data-key="${l.key}">−</button>
+            <span class="text-sm font-semibold w-5 text-center">${l.qty}</span>
+            <button class="cart-qty-plus w-7 h-7 rounded-lg border border-slate-200 text-sm font-bold" data-key="${l.key}">+</button>
+            <button class="cart-remove ml-auto text-red-400 hover:text-red-500 text-sm" data-key="${l.key}"><i class="fa-solid fa-trash-can"></i></button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    wrap.querySelectorAll('.cart-qty-minus').forEach(b => b.addEventListener('click', () => updateCartQty(b.dataset.key, -1)));
+    wrap.querySelectorAll('.cart-qty-plus').forEach(b => b.addEventListener('click', () => updateCartQty(b.dataset.key, 1)));
+    wrap.querySelectorAll('.cart-remove').forEach(b => b.addEventListener('click', () => removeCartLine(b.dataset.key)));
+  }
+
+  document.getElementById('cartSubtotal').textContent = `৳${cartSubtotal().toLocaleString('en-US')}`;
+  checkoutBtn.disabled = cart.length === 0;
+
+  const count = cartCount();
+  const badge = document.getElementById('cartBadge');
+  badge.textContent = count;
+  badge.classList.toggle('hidden', count === 0);
+
+  const mobileBar = document.getElementById('mobileCartBar');
+  document.getElementById('mobileCartCount').textContent = `${count} আইটেম — ৳${cartSubtotal().toLocaleString('en-US')}`;
+  mobileBar.classList.toggle('hidden', count === 0);
+}
+renderCart();
+
+/* =========================================================
+   CART DRAWER
+========================================================= */
+const cartDrawerWrap = document.getElementById('cartDrawerWrap');
+const cartDrawer = document.getElementById('cartDrawer');
+function openCartDrawer() {
+  cartDrawerWrap.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => cartDrawer.classList.remove('drawer-hidden'));
+}
+function closeCartDrawer() {
+  cartDrawer.classList.add('drawer-hidden');
+  setTimeout(() => { cartDrawerWrap.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
+}
+document.getElementById('cartBtn').addEventListener('click', openCartDrawer);
+document.getElementById('mobileCartBtn').addEventListener('click', openCartDrawer);
+cartDrawerWrap.querySelector('.cd-overlay').addEventListener('click', closeCartDrawer);
+cartDrawerWrap.querySelector('.cd-close').addEventListener('click', closeCartDrawer);
+
+/* =========================================================
+   CHECKOUT MODAL
+========================================================= */
+const checkoutModal = document.getElementById('checkoutModal');
+document.getElementById('checkoutBtn').addEventListener('click', () => {
+  if (cart.length === 0) return;
+  checkoutSource = 'cart';
+  closeCartDrawer();
+  renderCheckoutPreview();
+  updateCheckoutSummary();
+  openModalEl(checkoutModal);
+});
+checkoutModal.querySelector('.co-close').addEventListener('click', () => closeModalEl(checkoutModal));
+checkoutModal.querySelector('.co-overlay').addEventListener('click', () => closeModalEl(checkoutModal));
+
+document.getElementById('zoneInsideLabel').textContent = `ডেলিভারি ৳${DELIVERY_CHARGE.inside}`;
+document.getElementById('zoneOutsideLabel').textContent = `ডেলিভারি ৳${DELIVERY_CHARGE.outside}`;
+
+function getCheckoutItems() {
+  return checkoutSource === 'buynow' ? [buyNowItem] : cart;
+}
+function checkoutSubtotal() {
+  return getCheckoutItems().reduce((sum, l) => sum + l.price * l.qty, 0);
+}
+
+function renderCheckoutPreview() {
+  const items = getCheckoutItems();
+  document.getElementById('coItemsPreview').innerHTML = items.map(l => `
+    <div class="flex items-center gap-3">
+      <img src="${l.image}" alt="${l.name}" class="w-14 h-14 rounded-xl object-cover shrink-0">
+      <div class="flex-1 min-w-0">
+        <p class="font-medium text-sm truncate">${l.name}</p>
+        ${variantLabel(l.variant) ? `<p class="text-xs text-slate-400">${variantLabel(l.variant)}</p>` : ''}
+        <p class="text-xs text-slate-500">পরিমাণ: ${l.qty}</p>
+      </div>
+      <span class="text-sm font-bold text-brand shrink-0">৳${(l.price * l.qty).toLocaleString('en-US')}</span>
+    </div>
+  `).join('');
+}
+function getDeliveryCharge() {
+  const zone = document.querySelector('input[name="zone"]:checked')?.value || 'inside';
+  return DELIVERY_CHARGE[zone];
+}
+function updateCheckoutSummary() {
+  const subtotal = checkoutSubtotal();
+  const delivery = getDeliveryCharge();
+  document.getElementById('coSubtotal').textContent = `৳${subtotal.toLocaleString('en-US')}`;
+  document.getElementById('coDelivery').textContent = `৳${delivery}`;
+  document.getElementById('coTotal').textContent = `৳${(subtotal + delivery).toLocaleString('en-US')}`;
+}
+document.querySelectorAll('input[name="zone"]').forEach(r => r.addEventListener('change', updateCheckoutSummary));
+
+const mfsFields = document.getElementById('mfsFields');
+const mfsNumberLine = document.getElementById('mfsNumberLine');
+document.querySelectorAll('input[name="payment"]').forEach(r => {
+  r.addEventListener('change', () => {
+    const isMfs = r.checked && (r.value === 'bKash' || r.value === 'Nagad');
+    mfsFields.classList.toggle('hidden', !isMfs);
+    if (isMfs) mfsNumberLine.textContent = `আমাদের ${r.value} নম্বর: ${MERCHANT_PAYMENT[r.value]}`;
+  });
+});
+
+/* =========================================================
+   VALIDATION
+========================================================= */
+function showError(el, msg) { el.classList.add('border-red-400'); const e = el.parentElement.querySelector('.error-msg'); if (e) { e.textContent = msg; e.classList.remove('hidden'); } }
+function clearError(el) { el.classList.remove('border-red-400'); const e = el.parentElement.querySelector('.error-msg'); if (e) e.classList.add('hidden'); }
+function isValidBDPhone(p) { return /^01[3-9]\d{8}$/.test(p.trim()); }
+
+function validateCheckout() {
+  let valid = true;
+  const name = document.getElementById('coName');
+  const phone = document.getElementById('coPhone');
+  const address = document.getElementById('coAddress');
+  [name, phone, address].forEach(clearError);
+
+  if (!name.value.trim()) { showError(name, 'দয়া করে আপনার নাম লিখুন'); valid = false; }
+  if (!phone.value.trim()) { showError(phone, 'সঠিক মোবাইল নম্বর দিন'); valid = false; }
+  else if (!isValidBDPhone(phone.value)) { showError(phone, 'সঠিক মোবাইল নম্বর দিন (যেমন: 017XXXXXXXX)'); valid = false; }
+  if (!address.value.trim()) { showError(address, 'আপনার ঠিকানা লিখুন'); valid = false; }
+
+  const payment = document.querySelector('input[name="payment"]:checked').value;
+  if (payment === 'bKash' || payment === 'Nagad') {
+    const mfsTrxId = document.getElementById('mfsTrxId');
+    clearError(mfsTrxId);
+    if (!mfsTrxId.value.trim()) { showError(mfsTrxId, 'Transaction ID দিতে হবে'); valid = false; }
+  }
+  return valid;
+}
+
+/* =========================================================
+   ORDER SUBMISSION
+========================================================= */
+// Sequential invoice numbers starting at V999. This counter lives in the
+// browser's localStorage, so it only counts orders placed on this device —
+// two different customers on two different phones won't share one counter.
+// For one true store-wide sequence across every customer, the counter needs
+// to be assigned by your backend (the same place that forwards orders to
+// Telegram), not by the page itself.
+function generateOrderId() {
+  let counter = parseInt(localStorage.getItem('vendorify_invoice_counter'), 10);
+  if (isNaN(counter)) counter = 999;
+  localStorage.setItem('vendorify_invoice_counter', String(counter + 1));
+  return `V${counter}`;
+}
+
+async function sendOrderToBackend(order) {
+  try {
+    await fetch(BACKEND_CONFIG.ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order)
+    });
+  } catch (err) {
+    console.warn('Order could not be sent to backend:', err);
+  }
+}
+
+const checkoutForm = document.getElementById('checkoutForm');
+checkoutForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (isSubmittingOrder) return;
+  if (!validateCheckout()) return;
+
+  isSubmittingOrder = true;
+  const submitBtn = document.getElementById('coSubmitBtn');
+  const submitText = document.getElementById('coSubmitText');
+  submitBtn.disabled = true;
+  submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+  submitText.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> প্রসেস হচ্ছে...';
+
+  const items = getCheckoutItems();
+  const subtotal = checkoutSubtotal();
+  const delivery = getDeliveryCharge();
+  const total = subtotal + delivery;
+  const payment = document.querySelector('input[name="payment"]:checked').value;
+  const zone = document.querySelector('input[name="zone"]:checked').value;
+
+  const order = {
+    orderId: generateOrderId(),
+    time: new Date().toLocaleString('bn-BD', { dateStyle: 'medium', timeStyle: 'short' }),
+    items: items.map(l => ({ name: l.name, image: l.image, variant: l.variant, qty: l.qty, price: l.price })),
+    customer: {
+      name: document.getElementById('coName').value.trim(),
+      phone: document.getElementById('coPhone').value.trim(),
+      address: document.getElementById('coAddress').value.trim()
+    },
+    deliveryZone: zone,
+    deliveryCharge: delivery,
+    payment,
+    merchantPaymentNumber: (payment === 'bKash' || payment === 'Nagad') ? MERCHANT_PAYMENT[payment] : '',
+    trxId: (payment === 'bKash' || payment === 'Nagad') ? document.getElementById('mfsTrxId').value.trim() : '',
+    subtotal, total
+  };
+
+  await sendOrderToBackend(order);
+
+  setTimeout(() => {
+    document.getElementById('checkoutFormView').classList.add('hidden');
+    document.getElementById('checkoutSuccessView').classList.remove('hidden');
+    document.getElementById('orderIdDisplay').textContent = order.orderId;
+    document.getElementById('orderTimeDisplay').textContent = order.time;
+    document.getElementById('orderTotalDisplay').textContent = `৳${order.total.toLocaleString('en-US')}`;
+
+    document.getElementById('successItemsPreview').innerHTML = order.items.map(l => `
+      <div class="flex items-center gap-3">
+        <img src="${l.image}" alt="${l.name}" class="w-12 h-12 rounded-lg object-cover shrink-0">
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium truncate">${l.name}</p>
+          ${variantLabel(l.variant) ? `<p class="text-xs text-slate-400">${variantLabel(l.variant)} • পরিমাণ: ${l.qty}</p>` : `<p class="text-xs text-slate-400">পরিমাণ: ${l.qty}</p>`}
+        </div>
+      </div>
+    `).join('');
+
+    if (checkoutSource === 'cart') {
+      cart = [];
+      saveCart(cart);
+      renderCart();
+    } else {
+      buyNowItem = null;
+    }
+
+    isSubmittingOrder = false;
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+    submitText.textContent = 'অর্ডার কনফার্ম করুন';
+  }, 600);
+});
+
+document.getElementById('continueShoppingBtn').addEventListener('click', () => {
+  closeModalEl(checkoutModal, () => {
+    checkoutForm.reset();
+    mfsFields.classList.add('hidden');
+    document.querySelectorAll('.error-msg').forEach(e => e.classList.add('hidden'));
+    document.querySelectorAll('#checkoutForm input, #checkoutForm textarea').forEach(i => i.classList.remove('border-red-400'));
+    document.getElementById('checkoutFormView').classList.remove('hidden');
+    document.getElementById('checkoutSuccessView').classList.add('hidden');
+    document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+/* =========================================================
+   GLOBAL ESC KEY
+========================================================= */
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  if (!productModal.classList.contains('hidden')) closeModalEl(productModal);
+  if (!checkoutModal.classList.contains('hidden')) closeModalEl(checkoutModal);
+  if (!cartDrawerWrap.classList.contains('hidden')) closeCartDrawer();
+});
+</script>
+
+</body>
+</html>
