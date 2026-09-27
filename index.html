@@ -133,7 +133,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 <!-- ================= HERO ================= -->
 <section id="home" class="bg-gradient-to-r from-[#f85606] to-[#ff8a3d] py-10 sm:py-14">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-   
     <h1 class="text-2xl sm:text-4xl font-bold mb-3 text-white">Vendorify BD</h1>
     <p class="text-white/90 max-w-xl mx-auto mb-6">আপনার প্রয়োজনীয় সবকিছু, এক জায়গায়</p>
     <a href="#products" class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-brand font-semibold px-6 py-3 rounded-full transition-colors">
@@ -373,7 +372,8 @@ const MERCHANT_PAYMENT = {
   Nagad: "01832541023 (Personal)"
 };
 
-const PRODUCTS = [ {
+const PRODUCTS = [ 
+  {
     id: 'medicine-box',
     name: 'প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স',
     category: 'home-decor',
@@ -426,7 +426,6 @@ const PRODUCTS = [ {
 ];
 
 const DELIVERY_CHARGE = { inside: 60, outside: 120 };
-// Placeholder — route through a secure backend/serverless proxy, never expose a real token client-side.
 const BACKEND_CONFIG = { ENDPOINT: '/api/send-order' };
 
 let currentCategory = 'all';
@@ -434,7 +433,7 @@ let currentSearch = '';
 let activeProduct = null;
 let activeVariant = {};
 let isSubmittingOrder = false;
-let checkoutSource = 'cart';   // 'cart' or 'buynow'
+let checkoutSource = 'cart';   
 let buyNowItem = null;
 
 /* =========================================================
@@ -535,7 +534,7 @@ function renderProducts() {
 renderProducts();
 
 /* =========================================================
-   QUICK ACTIONS — card-level Cart / Order Now (no popup for variant pick)
+   QUICK ACTIONS
 ========================================================= */
 function defaultVariantFor(product) {
   const variant = {};
@@ -583,7 +582,7 @@ function closeModalEl(modalEl, after) {
   setTimeout(() => { modalEl.classList.add('hidden'); modalEl.classList.remove('flex'); document.body.style.overflow = ''; if (after) after(); }, 200);
 }
 
-let pendingIntent = 'cart'; // 'cart' or 'buynow' — set by which button opened the modal
+let pendingIntent = 'cart';
 
 function openProductModal(productId, intent) {
   const p = PRODUCTS.find(x => x.id === productId);
@@ -879,12 +878,6 @@ function validateCheckout() {
 /* =========================================================
    ORDER SUBMISSION
 ========================================================= */
-// Sequential invoice numbers starting at V999. This counter lives in the
-// browser's localStorage, so it only counts orders placed on this device —
-// two different customers on two different phones won't share one counter.
-// For one true store-wide sequence across every customer, the counter needs
-// to be assigned by your backend (the same place that forwards orders to
-// Telegram), not by the page itself.
 function generateOrderId() {
   let counter = parseInt(localStorage.getItem('vendorify_invoice_counter'), 10);
   if (isNaN(counter)) counter = 999;
