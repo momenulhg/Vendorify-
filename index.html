@@ -167,9 +167,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     </div>
     <p class="text-slate-400 text-sm">© 2026 Vendorify BD</p>
     <div class="flex items-center gap-4 text-slate-400">
-      <i class="fa-brands fa-facebook hover:text-brand cursor-pointer transition-colors"></i>
-      <i class="fa-brands fa-whatsapp hover:text-brand cursor-pointer transition-colors"></i>
-      <i class="fa-solid fa-phone hover:text-brand cursor-pointer transition-colors"></i>
+      <a href="https://www.facebook.com/share/1J7GP5UmxY/" target="_blank" rel="noopener" aria-label="Facebook Page"><i class="fa-brands fa-facebook text-xl hover:text-brand transition-colors"></i></a>
+      <a href="https://wa.me/8801775779942" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp text-xl hover:text-brand transition-colors"></i></a>
+      <a href="tel:+8801775779942" aria-label="Call"><i class="fa-solid fa-phone text-xl hover:text-brand transition-colors"></i></a>
     </div>
   </div>
 </footer>
@@ -380,6 +380,15 @@ const MERCHANT_PAYMENT = {
 
 const PRODUCTS = [ 
   {
+    id: 'coffee-egg-mixer',
+    name: 'মাল্টিপার্পাস কফি ও ডিম মিক্সার',
+    category: 'gadget',
+    categoryLabel: 'গ্যাজেট',
+    price: 549,
+    image: 'https://i.ibb.co.com/S7w5GcD5/Wireless-Rechargeable-Multi-function-Coffee-Whisk.webp',
+    variants: {},
+  },
+  {
     id: 'medicine-box',
     name: 'প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স',
     category: 'home-decor',
@@ -520,7 +529,7 @@ function renderProducts() {
         <h3 class="product-card-img font-semibold text-sm sm:text-base mt-0.5 mb-1.5 line-clamp-2 cursor-pointer" data-id="${p.id}">${p.name}</h3>
         <div class="flex items-center gap-2 mb-3">
           <span class="font-bold text-brand">৳${p.price.toLocaleString('en-US')}</span>
-          <span class="text-xs text-slate-400 line-through">৳${p.oldPrice.toLocaleString('en-US')}</span>
+          ${p.oldPrice ? `<span class="text-xs text-slate-400 line-through">৳${p.oldPrice.toLocaleString('en-US')}</span>` : ''}
         </div>
         <div class="grid grid-cols-2 gap-2">
           <button class="card-order-now bg-brand text-white text-xs font-bold py-2 rounded-full" data-id="${p.id}">অর্ডার করুন</button>
@@ -606,7 +615,7 @@ function openProductModal(productId, intent) {
   document.getElementById('pmCategory').textContent = p.categoryLabel;
   document.getElementById('pmName').textContent = p.name;
   document.getElementById('pmPrice').textContent = `৳${p.price.toLocaleString('en-US')}`;
-  document.getElementById('pmOldPrice').textContent = `৳${p.oldPrice.toLocaleString('en-US')}`;
+  document.getElementById('pmOldPrice').textContent = p.oldPrice ? `৳${p.oldPrice.toLocaleString('en-US')}` : '';
   document.getElementById('pmQtyInput').value = 1;
   document.getElementById('pmError').classList.add('hidden');
 
