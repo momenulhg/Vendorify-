@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#f85606">
+<title id="pageTitle">প্রোডাক্ট — Vendorify BD</title>
+<meta id="pageDescription" name="description" content="Vendorify BD প্রোডাক্ট">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1423208055834032');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1423208055834032&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{ --brand:#f85606; --brand-dark:#d84a04; --brand-light:#fff1e8; --ink:#1a1a1a; --paper:#f5f5f5; color-scheme: light only; }
+html{ color-scheme: light only; }
+*{font-family:'Hind Siliguri', sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#fff; color:var(--ink);}
+input, textarea, select, button{ color-scheme: light only; background-color:#fff; color:var(--ink); }
+.text-brand{color:var(--brand);}
+.bg-brand{background-color:var(--brand);}
+.border-brand{border-color:var(--brand);}
+.card-soft{ box-shadow:0 10px 30px -12px rgba(15,23,42,.08); }
+.card-lift{ transition:transform .2s ease, box-shadow .2s ease; }
+.card-lift:hover{ transform:translateY(-4px); }
+.pulse-ring{ animation:pulseRing 2.4s cubic-bezier(0.4,0,0.6,1) infinite; }
+@keyframes pulseRing{
+  0%{box-shadow:0 0 0 0 rgba(248,86,6,.35);}
+  70%{box-shadow:0 0 0 14px rgba(248,86,6,0);}
+  100%{box-shadow:0 0 0 0 rgba(248,86,6,0);}
+}
+.modal-fade{ transition:opacity .2s ease; }
+.modal-panel{ transition:transform .25s cubic-bezier(.2,.9,.3,1), opacity .25s ease; }
+.accordion-content{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+::-webkit-scrollbar{ width:6px; }
+::-webkit-scrollbar-thumb{ background:#e2b8a6; border-radius:99px; }
+.pb-safe{ padding-bottom: env(safe-area-inset-bottom, 0px); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--brand); outline-offset:2px;
+}
+</style>
+</head>
+<body class="antialiased bg-white text-[--ink]">
+
+<!-- ================= HEADER ================= -->
+<header class="sticky top-0 z-40 bg-white border-b border-slate-100 shadow-sm">
+  <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="https://i.ibb.co.com/x8LXPdLn/copilot-image-1778692198473.png" alt="Vendorify BD" class="w-8 h-8 rounded-lg object-contain">
+      <span class="font-bold text-[--ink]">Vendorify BD</span>
+    </a>
+    <a href="index.html" class="text-xs font-medium text-slate-500 hover:text-brand"><i class="fa-solid fa-store mr-1"></i> সব প্রোডাক্ট</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="max-w-lg mx-auto px-5 pt-8 pb-6 text-center">
+  <div class="rounded-3xl overflow-hidden card-soft mb-6 bg-white">
+    <img id="pImage" src="" alt="" class="w-full aspect-square object-cover">
+  </div>
+
+  <span id="pCategoryBadge" class="inline-flex items-center gap-2 bg-[--brand-light] text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-4"></span>
+
+  <h1 id="pName" class="text-2xl sm:text-3xl font-bold leading-snug mb-3"></h1>
+  <p id="pTagline" class="text-slate-500 leading-relaxed mb-6 max-w-md mx-auto"></p>
+
+  <div class="flex items-center justify-center gap-3 mb-6">
+    <span id="pPrice" class="text-3xl font-bold"></span>
+    <span id="pOldPrice" class="text-lg text-slate-400 line-through"></span>
+    <span id="pDiscountBadge" class="bg-brand/10 text-brand text-xs font-bold px-2.5 py-1 rounded-full"></span>
+  </div>
+
+  <button onclick="openOrderModal()" class="pulse-ring bg-brand hover:bg-[--brand-dark] text-white font-bold px-8 py-4 rounded-full transition-colors shadow-lg w-full sm:w-auto">
+    <i class="fa-solid fa-bolt mr-2"></i> এখনই অর্ডার করুন
+  </button>
+
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-5 mt-5 text-sm text-slate-500">
+    <span><i class="fa-solid fa-circle-check text-brand mr-1.5"></i>ক্যাশ অন ডেলিভারি</span>
+    <span><i class="fa-solid fa-circle-check text-brand mr-1.5"></i>সারাদেশে ডেলিভারি</span>
+    <span><i class="fa-solid fa-circle-check text-brand mr-1.5"></i>১০০% অরিজিনাল</span>
+  </div>
+</section>
+
+<!-- ================= DETAIL IMAGES ================= -->
+<section id="pDetailSection" class="max-w-lg mx-auto px-5 pb-8 hidden">
+  <div id="pDetailImages" class="space-y-3"></div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8">
+  <div class="bg-white rounded-3xl card-soft p-6 sm:p-8">
+    <h2 class="text-xl font-bold mb-5 text-center">প্রোডাক্ট ফিচার</h2>
+    <div id="pFeaturesWrap" class="grid grid-cols-1 gap-3 text-sm text-slate-600"></div>
+  </div>
+</section>
+
+<!-- ================= VARIANT + QUANTITY + ORDER ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8">
+  <div class="bg-white rounded-3xl card-soft p-6 sm:p-8">
+    <div id="pVariantsWrap" class="space-y-4 mb-5"></div>
+    <div class="mb-6">
+      <label class="block text-sm font-semibold mb-2">পরিমাণ</label>
+      <div class="flex items-center gap-3">
+        <button type="button" id="pQtyMinus" class="w-11 h-11 rounded-xl border border-slate-200 flex items-center justify-center font-bold hover:bg-slate-50">−</button>
+        <input type="number" id="pQtyInput" value="1" min="1" max="10" class="w-16 text-center border border-slate-200 rounded-xl py-2.5 font-semibold" readonly>
+        <button type="button" id="pQtyPlus" class="w-11 h-11 rounded-xl border border-slate-200 flex items-center justify-center font-bold hover:bg-slate-50">+</button>
+      </div>
+    </div>
+    <p id="pVariantError" class="hidden text-xs text-red-500 mb-3"></p>
+    <button onclick="openOrderModal()" class="w-full bg-brand hover:bg-[--brand-dark] text-white font-bold py-4 rounded-full transition-colors">
+      <i class="fa-solid fa-bolt mr-2"></i> এখনই অর্ডার করুন
+    </button>
+  </div>
+</section>
+
+<!-- ================= SPECS ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8">
+  <h2 class="text-xl font-bold text-center mb-5">প্রোডাক্ট ডিটেইলস</h2>
+  <div class="bg-white rounded-3xl card-soft overflow-hidden">
+    <dl id="pSpecsWrap" class="divide-y divide-slate-100 text-sm"></dl>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8">
+  <h2 class="text-xl font-bold text-center mb-6">কাস্টমাররা যা বলছেন</h2>
+  <div class="space-y-4">
+    <div class="bg-white rounded-2xl card-soft p-5">
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-9 h-9 rounded-full bg-[--brand-light] flex items-center justify-center text-brand font-bold text-sm">র</div>
+        <div><p class="font-semibold text-sm">রহিমা বেগম</p><span class="text-[11px] text-green-600"><i class="fa-solid fa-circle-check mr-1"></i>Verified Buyer</span></div>
+      </div>
+      <div class="text-brand text-xs mb-1.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p class="text-sm text-slate-600 leading-relaxed">প্রোডাক্টের কোয়ালিটি প্রত্যাশার চেয়ে ভালো, ডেলিভারিও দ্রুত পেয়েছি।</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft p-5">
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-9 h-9 rounded-full bg-[--brand-light] flex items-center justify-center text-brand font-bold text-sm">ক</div>
+        <div><p class="font-semibold text-sm">কামাল উদ্দিন</p><span class="text-[11px] text-green-600"><i class="fa-solid fa-circle-check mr-1"></i>Verified Buyer</span></div>
+      </div>
+      <div class="text-brand text-xs mb-1.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      <p class="text-sm text-slate-600 leading-relaxed">প্যাকেজিং ভালো ছিল, ব্যবহার করাও সহজ। দাম অনুযায়ী মানসম্মত।</p>
+    </div>
+    <div class="bg-white rounded-2xl card-soft p-5">
+      <div class="flex items-center gap-3 mb-2">
+        <div class="w-9 h-9 rounded-full bg-[--brand-light] flex items-center justify-center text-brand font-bold text-sm">শ</div>
+        <div><p class="font-semibold text-sm">শারমিন আক্তার</p><span class="text-[11px] text-green-600"><i class="fa-solid fa-circle-check mr-1"></i>Verified Buyer</span></div>
+      </div>
+      <div class="text-brand text-xs mb-1.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+      <p class="text-sm text-slate-600 leading-relaxed">প্রয়োজন মেটাচ্ছে ঠিকঠাক, আবার অর্ডার করার ইচ্ছা আছে।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+    <div class="bg-white rounded-2xl card-soft p-4"><i class="fa-solid fa-money-bill-wave text-brand mb-2"></i><p class="text-xs font-semibold">Cash on Delivery</p></div>
+    <div class="bg-white rounded-2xl card-soft p-4"><i class="fa-solid fa-truck-fast text-brand mb-2"></i><p class="text-xs font-semibold">Fast Delivery</p></div>
+    <div class="bg-white rounded-2xl card-soft p-4"><i class="fa-solid fa-shield-halved text-brand mb-2"></i><p class="text-xs font-semibold">Original Product</p></div>
+    <div class="bg-white rounded-2xl card-soft p-4"><i class="fa-solid fa-headset text-brand mb-2"></i><p class="text-xs font-semibold">Customer Support</p></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="max-w-lg mx-auto px-5 pb-8">
+  <h2 class="text-xl font-bold text-center mb-5">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
+  <div class="space-y-3" id="faqAccordion">
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-sm">Cash on Delivery আছে?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">হ্যাঁ, সারাদেশে ক্যাশ অন ডেলিভারি সুবিধা আছে।</p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-sm">ডেলিভারি চার্জ কত?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500" id="faqDeliveryText"></p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-sm">কত দিনে প্রোডাক্ট পাব?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">ঢাকার ভিতরে ১-২ দিন এবং ঢাকার বাইরে ৩-৫ কার্যদিবসের মধ্যে ডেলিভারি হয়।</p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-sm">প্রোডাক্ট কি অরিজিনাল?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">হ্যাঁ, আমরা ১০০% অরিজিনাল ও কোয়ালিটি চেক করা প্রোডাক্ট সরবরাহ করি।</p></div>
+    </div>
+    <div class="faq-item bg-white rounded-2xl card-soft overflow-hidden">
+      <button class="faq-trigger w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-sm">রিপ্লেসমেন্ট করা যাবে?<i class="fa-solid fa-chevron-down text-brand text-xs transition-transform"></i></button>
+      <div class="accordion-content"><p class="px-5 pb-4 text-sm text-slate-500">ম্যানুফ্যাকচারিং সমস্যা থাকলে ৭ দিনের মধ্যে রিপ্লেসমেন্ট করা হয়।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="max-w-lg mx-auto px-5 pb-14 text-center">
+  <h2 class="text-2xl font-bold mb-3">আজই অর্ডার করুন</h2>
+  <p id="pFinalCtaLine" class="text-slate-500 mb-6"></p>
+  <button onclick="openOrderModal()" class="bg-brand hover:bg-[--brand-dark] text-white font-bold px-8 py-4 rounded-full w-full sm:w-auto shadow-lg transition-colors">
+    <i class="fa-solid fa-bolt mr-2"></i> এখনই অর্ডার করুন
+  </button>
+</section>
+
+<footer class="border-t border-slate-100 py-8 text-center text-xs text-slate-400 pb-24 sm:pb-8">
+  <div class="flex items-center justify-center gap-5 mb-3 text-slate-500 text-xl">
+    <a href="https://www.facebook.com/share/1J7GP5UmxY/" target="_blank" rel="noopener" aria-label="Facebook Page"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://wa.me/8801775779942" onclick="if(window.fbq)fbq('track','Contact')" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+  © 2026 Vendorify BD। সর্বস্বত্ব সংরক্ষিত। — <a href="index.html" class="text-brand font-medium">সব প্রোডাক্ট দেখুন</a>
+</footer>
+
+<!-- ================= MOBILE STICKY CTA ================= -->
+<div class="fixed bottom-0 inset-x-0 z-30 bg-white border-t border-slate-100 shadow-[0_-8px_20px_rgba(0,0,0,.06)] pb-safe">
+  <div class="max-w-lg mx-auto flex items-center gap-3 px-4 py-3">
+    <div class="flex-1">
+      <p class="text-[11px] text-slate-400 leading-none">মূল্য</p>
+      <p id="stickyPrice" class="font-bold"></p>
+    </div>
+    <button onclick="openOrderModal()" class="bg-brand text-white font-bold px-6 py-3 rounded-full text-sm">এখনই অর্ডার করুন</button>
+  </div>
+</div>
+
+<!-- ================= ORDER MODAL ================= -->
+<div id="orderModal" class="fixed inset-0 z-50 hidden items-center justify-center p-0 sm:p-4 modal-fade">
+  <div id="modalOverlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+  <div class="modal-panel opacity-0 scale-95 relative bg-white w-full sm:max-w-md sm:rounded-3xl rounded-t-3xl max-h-[92vh] overflow-y-auto shadow-2xl">
+
+    <div class="sticky top-0 bg-white z-10 flex items-center justify-between px-5 py-4 border-b border-slate-100">
+      <h3 class="font-bold"><i class="fa-solid fa-bag-shopping text-brand mr-2"></i>অর্ডার কনফার্ম করুন</h3>
+      <button id="modalCloseBtn" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-500" aria-label="Close"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+
+    <div id="formView">
+      <form id="orderForm" class="px-5 py-5 space-y-5" novalidate>
+
+        <!-- Honeypot — invisible to real visitors, bots that auto-fill every
+             field will fill this in, so submissions with it filled are
+             silently dropped in the submit handler below. -->
+        <div class="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+          <label for="pWebsite">Website</label>
+          <input type="text" id="pWebsite" name="pWebsite" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="flex items-center gap-3 bg-slate-50 rounded-2xl p-3">
+          <img id="modalProductImg" src="" alt="প্রোডাক্ট" class="w-14 h-14 rounded-xl object-cover">
+          <div class="flex-1">
+            <p id="modalProductName" class="font-semibold text-sm"></p>
+            <p id="modalPriceLine" class="text-brand font-bold text-sm"></p>
+          </div>
+        </div>
+
+        <div class="space-y-4 pt-2 border-t border-slate-100">
+          <div>
+            <label for="custName" class="block text-xs font-medium text-slate-500 mb-1.5">পূর্ণ নাম *</label>
+            <input id="custName" type="text" placeholder="আপনার নাম লিখুন" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none">
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+          <div>
+            <label for="custPhone" class="block text-xs font-medium text-slate-500 mb-1.5">মোবাইল নম্বর *</label>
+            <input id="custPhone" type="tel" inputmode="numeric" placeholder="01XXXXXXXXX" maxlength="11" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none">
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+          <div>
+            <label for="custAddress" class="block text-xs font-medium text-slate-500 mb-1.5">সম্পূর্ণ ঠিকানা (জেলা, থানা, এলাকা) *</label>
+            <textarea id="custAddress" rows="2" placeholder="যেমন: ঢাকা, ধানমন্ডি, রোড ৫, বাসা ১২" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-brand outline-none resize-none"></textarea>
+            <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2">ডেলিভারি এলাকা *</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="cursor-pointer">
+              <input type="radio" name="zone" value="inside" class="peer hidden" checked>
+              <div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center transition-colors">
+                <p class="text-sm font-semibold">ঢাকার ভিতরে</p>
+                <p class="text-xs text-slate-400" id="zoneInsideLabel"></p>
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="zone" value="outside" class="peer hidden">
+              <div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center transition-colors">
+                <p class="text-sm font-semibold">ঢাকার বাইরে</p>
+                <p class="text-xs text-slate-400" id="zoneOutsideLabel"></p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="space-y-3 pt-2 border-t border-slate-100">
+          <p class="text-sm font-semibold pt-1">পেমেন্ট পদ্ধতি *</p>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="cursor-pointer"><input type="radio" name="payment" value="COD" class="peer hidden" checked><div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center text-xs font-medium transition-colors flex flex-col items-center gap-1"><i class="fa-solid fa-money-bill-wave"></i> COD</div></label>
+            <label class="cursor-pointer"><input type="radio" name="payment" value="bKash" class="peer hidden"><div class="peer-checked:border-[#f85606] peer-checked:bg-[#fff1e8] border-2 border-slate-200 rounded-xl py-3 text-center text-xs font-medium transition-colors flex flex-col items-center gap-1"><i class="fa-solid fa-mobile-screen-button"></i> bKash</div></label>
+          </div>
+          <div id="mfsFields" class="hidden bg-[#fff1e8] rounded-xl p-4 space-y-3">
+            <p class="text-xs text-slate-600 leading-relaxed">
+              <span id="mfsNumberLine" class="font-semibold text-slate-800"></span><br>
+              এই নম্বরে <b>Send Money</b> করে নিচে Transaction ID দিন।
+            </p>
+            <div>
+              <label for="mfsTrxId" class="block text-xs font-medium text-slate-500 mb-1.5">Transaction ID *</label>
+              <input id="mfsTrxId" type="text" placeholder="যেমন: 8N7A9X2K1L" class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:border-brand outline-none bg-white">
+              <p class="error-msg hidden text-xs text-red-500 mt-1"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-4 space-y-2 text-sm">
+          <div class="flex justify-between text-slate-500"><span>Product</span><span id="sumProduct" class="text-[--ink] font-medium"></span></div>
+          <div class="flex justify-between text-slate-500"><span>Price</span><span id="sumPrice" class="text-[--ink] font-medium"></span></div>
+          <div class="flex justify-between text-slate-500"><span>Delivery Charge</span><span id="sumDelivery" class="text-[--ink] font-medium"></span></div>
+          <div class="flex justify-between font-bold pt-2 border-t border-slate-200"><span>Total Amount</span><span id="sumTotal" class="text-brand"></span></div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="w-full bg-brand hover:bg-[--brand-dark] text-white font-bold py-4 rounded-full transition-colors">
+          <span id="submitBtnText">অর্ডার কনফার্ম করুন</span>
+        </button>
+      </form>
+    </div>
+
+    <div id="successView" class="hidden px-6 py-8 text-center">
+      <div class="w-16 h-16 mx-auto rounded-full bg-green-100 text-green-600 flex items-center justify-center text-2xl mb-4"><i class="fa-solid fa-check"></i></div>
+      <h3 class="text-xl font-bold mb-2">🎉 আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে!</h3>
+      <p class="text-slate-500 text-sm mb-4">আমাদের প্রতিনিধি খুব শীঘ্রই আপনার সাথে যোগাযোগ করবেন।</p>
+      <div class="flex items-center gap-3 bg-slate-50 rounded-2xl p-3 mb-4 text-left">
+        <img id="successProductImg" src="" alt="" class="w-12 h-12 rounded-lg object-cover shrink-0">
+        <div class="flex-1 min-w-0">
+          <p id="successProductName" class="text-sm font-medium truncate"></p>
+          <p id="successProductQty" class="text-xs text-slate-400"></p>
+        </div>
+      </div>
+      <div class="bg-slate-50 rounded-xl py-3 px-4 inline-block mb-2">
+        <p class="text-xs text-slate-400">Order ID</p>
+        <p id="orderIdDisplay" class="font-bold text-brand text-lg"></p>
+      </div>
+      <p id="orderTimeDisplay" class="text-xs text-slate-400 mb-6"></p>
+      <button id="continueBtn" class="w-full bg-[#1a1a1a] hover:opacity-90 text-white font-bold py-3.5 rounded-full transition-opacity">ঠিক আছে</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   PRODUCT CATALOG — keep this list in sync with index.html's
+   PRODUCTS array (same id/name/price/oldPrice/image/variants).
+   The extra fields here (tagline, features, specs) are only
+   used by this single-product landing page.
+========================================================= */
+const MERCHANT_PAYMENT = {
+  bKash: "01775779942 (Personal)"
+};
+
+const PRODUCTS = [
+  {
+    id: 'medicine-box',
+    name: 'প্রিমিয়াম ৪ ড্রয়ার মেডিসিন বক্স',
+    category: 'home-decor',
+    categoryLabel: 'হোম ডেকর',
+    price: 550,
+    oldPrice: 850,
+    image: 'https://i.ibb.co.com/gMFhbmKH/1789231480912.jpg',
+    variants: {},
+    tagline: 'সকাল, দুপুর, রাত ও অন্যান্য ওষুধ আলাদা করে গুছিয়ে রাখুন — একটি বক্সেই।',
+    features: [
+      '৪টি আলাদা ড্রয়ার',
+      'ওষুধ আলাদা করে রাখা যায়',
+      'প্রয়োজনের সময় সহজে খুঁজে পাওয়া যায়',
+      'টেবিল, আলমারি বা বেডসাইডে রাখা যায়',
+      'পরিবারের সবার জন্য ব্যবহারযোগ্য'
+    ],
+    specs: { 'ড্রয়ার সংখ্যা': '৪টি', 'উপযোগী স্থান': 'ঘর, অফিস, বেডসাইড টেবিল' }
+  },
+  {
+    id: 'Pedal Cycle',
+    name: 'মিনি পেডাল সাইকেল',
+    category: 'gadget',
+    categoryLabel: 'গ্যাজেট',
+    price: 1950,
+    oldPrice: 2999,
+    image: 'https://i.ibb.co.com/7tPWgwGx/1789757636808.jpg',
+    variants: {},
+    tagline: 'ঘরে বসেই হালকা পায়ের ব্যায়াম করার সহজ সমাধান।',
+    features: [
+      'কমপ্যাক্ট, ঘরের যেকোনো কোণে রাখা যায়',
+      'টেবিলের নিচে বসেও ব্যবহারযোগ্য',
+      'হালকা ও বহনযোগ্য ডিজাইন',
+      'শব্দহীন, স্মুথ পেডেলিং',
+      'সহজে পরিষ্কার করা যায়'
+    ],
+    specs: { 'ব্যবহার': 'ঘরোয়া ব্যায়াম', 'উপযোগী স্থান': 'বসার ঘর, অফিস ডেস্ক' }
+  },
+  {
+    id: 'Massager',
+    name: 'নেক অ্যান্ড শোল্ডার ম্যাসাজার',
+    category: 'gadget',
+    categoryLabel: 'গ্যাজেট',
+    price: 1850,
+    oldPrice: 2250,
+    image: 'https://i.ibb.co.com/bYsxFyg/1789151284950.jpg',
+    variants: {},
+    tagline: 'দিনশেষে ঘাড় ও কাঁধের ক্লান্তি দূর করার আরামদায়ক সঙ্গী।',
+    features: [
+      'একাধিক স্পিড/মোড সেটিং',
+      'ঘাড় ও কাঁধ দুই জায়গাতেই ব্যবহারযোগ্য',
+      'সহজে ধোয়া যায় এমন কভার',
+      'হালকা ওজন, বহনযোগ্য',
+      'সহজ ওয়ান-বাটন কন্ট্রোল'
+    ],
+    specs: { 'ব্যবহার': 'ঘাড় ও কাঁধ', 'পাওয়ার': 'রিচার্জেবল' }
+  },
+  {
+    id: 'oil aplicator',
+    name: 'সিরাম ও অয়েল অ্যাপ্লিকেটর চিরুনি',
+    category: 'home-decor',
+    categoryLabel: 'হোম ডেকর',
+    price: 350,
+    oldPrice: 600,
+    image: 'https://i.ibb.co.com/jk6nhmXm/IMG-20260912-144035.png',
+    variants: { color: ['White'], size: ['Large'] },
+    tagline: 'তেল বা সিরাম সরাসরি চুলের গোড়ায় সহজে প্রয়োগ করুন।',
+    features: [
+      'চিরুনির মাধ্যমে সরাসরি স্ক্যাল্পে তেল পৌঁছায়',
+      'হাত না মাখিয়েই ব্যবহারযোগ্য',
+      'সহজে রিফিল করা যায়',
+      'সব ধরনের চুলে ব্যবহারযোগ্য',
+      'পরিষ্কার করা সহজ'
+    ],
+    specs: { 'রঙ': 'White', 'সাইজ': 'Large' }
+  },
+  {
+    id: 'nebulizer',
+    name: 'নেবুলাইজার মেশিন',
+    category: 'gadget',
+    categoryLabel: 'গ্যাজেট',
+    price: 700,
+    oldPrice: 1200,
+    image: 'https://i.ibb.co.com/JwHBF68k/IMG-20260918-211038.jpg',
+    variants: {},
+    tagline: 'বাসায় সহজে ব্যবহারযোগ্য একটি কমপ্যাক্ট নেবুলাইজার মেশিন।',
+    features: [
+      'কমপ্যাক্ট, বহনযোগ্য ডিজাইন',
+      'সহজ ওয়ান-বাটন অপারেশন',
+      'তুলনামূলক নিরিবিলি চালু',
+      'পরিষ্কার করা সহজ',
+      'ঘরে ব্যবহারের উপযোগী'
+    ],
+    specs: { 'ব্যবহার': 'বাসায় ব্যবহারের উপযোগী', 'পাওয়ার': 'ইলেকট্রিক' }
+  },
+  {
+    id: 'coffee-egg-mixer',
+    name: 'মাল্টিপার্পাস কফি ও ডিম মিক্সার',
+    category: 'gadget',
+    categoryLabel: 'গ্যাজেট',
+    price: 549,
+    image: 'https://i.ibb.co.com/S7w5GcD5/Wireless-Rechargeable-Multi-function-Coffee-Whisk.webp',
+    detailImages: ['https://i.ibb.co.com/HLGFmVtB/d8duch4t.webp'],
+    variants: {},
+    tagline: 'কফি, ডিম ও আরও অনেক কিছু মেশানোর সহজ ওয়্যারলেস রিচার্জেবল মিক্সার।',
+    features: [
+      'ওয়্যারলেস ও রিচার্জেবল',
+      'কফি ও ডিম ফেটানো ও মেশানোর জন্য',
+      'হালকা ও সহজে ব্যবহারযোগ্য',
+      'সহজে পরিষ্কার করা যায়'
+    ],
+    specs: { 'ব্যবহার': 'কফি, ডিম, দুধ মেশানো', 'পাওয়ার': 'রিচার্জেবল' }
+  },
+  {
+    id: 'beetroot-moringa-comb',
+    name: 'স্প্রে বিটরুট ও মরিঙ্গা কম্ব',
+    category: 'beauty',
+    categoryLabel: 'বিউটি',
+    price: 750,
+    image: 'https://i.ibb.co.com/tMfF2ZQ3/IMG-20261007-184559.jpg',
+    detailImages: ['https://i.ibb.co.com/zdh4b8x/images-81.jpg', 'https://i.ibb.co.com/jxK0r4R/1791377058731.jpg'],
+    freeDelivery: true,
+    variants: {},
+    tagline: 'বিটরুট ও মরিঙ্গার স্প্রে, কম্ব অ্যাপ্লিকেটরে সহজে স্ক্যাল্পে লাগান।',
+    features: [
+      'বিটরুট ও মরিঙ্গা নির্যাসযুক্ত হেয়ার স্প্রে',
+      'কম্ব অ্যাপ্লিকেটরে সরাসরি স্ক্যাল্পে লাগানো যায়',
+      'হাত না লাগিয়ে পরিষ্কারভাবে ব্যবহার করা যায়',
+      'চুলের যত্নে নিয়মিত ব্যবহারের জন্য',
+      'সারাদেশে ফ্রি ডেলিভারি'
+    ],
+    specs: { 'ধরন': 'হেয়ার স্প্রে (কম্ব অ্যাপ্লিকেটর)', 'উপাদান': 'বিটরুট ও মরিঙ্গা', 'ডেলিভারি': 'সারাদেশে ফ্রি' }
+  }
+];
+
+const DELIVERY_CHARGE = { inside: 60, outside: 120 };
+const BACKEND_CONFIG = { ENDPOINT: '/api/send-order' };
+
+let activeProduct = null;
+let activeVariant = {};
+let isSubmittingOrder = false;
+
+/* =========================================================
+   LOAD PRODUCT FROM URL (?id=...)
+========================================================= */
+function getRequestedId() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('id') || params.get('product') || '';
+}
+function findProduct() {
+  const target = getRequestedId().trim().toLowerCase();
+  if (!target) return PRODUCTS[0];
+  return PRODUCTS.find(p => p.id.trim().toLowerCase() === target) || PRODUCTS[0];
+}
+
+function renderProductPage() {
+  const p = findProduct();
+  activeProduct = p;
+  activeVariant = {};
+
+  document.getElementById('pageTitle').textContent = `${p.name} — Vendorify BD`;
+  document.getElementById('pageDescription').setAttribute('content', p.tagline || p.name);
+
+  document.getElementById('pImage').src = p.image;
+  document.getElementById('pImage').alt = p.name;
+  document.getElementById('pCategoryBadge').textContent = p.categoryLabel;
+  document.getElementById('pName').textContent = p.name;
+  document.getElementById('pTagline').textContent = p.tagline || '';
+  document.getElementById('pPrice').textContent = `৳${p.price.toLocaleString('en-US')}`;
+  document.getElementById('pOldPrice').textContent = p.oldPrice ? `৳${p.oldPrice.toLocaleString('en-US')}` : '';
+  document.getElementById('pDiscountBadge').style.display = p.oldPrice ? '' : 'none';
+  if (p.oldPrice) {
+    const discount = Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100);
+    document.getElementById('pDiscountBadge').textContent = `${discount}% ছাড়`;
+  }
+  document.getElementById('stickyPrice').textContent = `৳${p.price.toLocaleString('en-US')}`;
+  document.getElementById('pFinalCtaLine').textContent = `${p.name} — সারাদেশে ক্যাশ অন ডেলিভারি সুবিধাসহ।`;
+
+  const detailImgs = p.detailImages || [];
+  document.getElementById('pDetailSection').classList.toggle('hidden', detailImgs.length === 0);
+  document.getElementById('pDetailImages').innerHTML = detailImgs.map(u => `<img src="${u}" alt="${p.name}" loading="lazy" class="w-full rounded-2xl">`).join('');
+
+  document.getElementById('pFeaturesWrap').innerHTML = (p.features || []).map(f => `
+    <div class="flex items-center gap-3"><i class="fa-solid fa-check text-brand"></i>${f}</div>
+  `).join('');
+
+  const specsWrap = document.getElementById('pSpecsWrap');
+  const specEntries = Object.entries({ 'প্রোডাক্ট নাম': p.name, ...(p.specs || {}) });
+  specsWrap.innerHTML = specEntries.map(([k, v], i) => `
+    <div class="flex justify-between px-5 py-3.5 ${i % 2 ? 'bg-slate-50/60' : ''}"><dt class="text-slate-500">${k}</dt><dd class="font-semibold text-right">${v}</dd></div>
+  `).join('');
+
+  const freeDel = !!(activeProduct && activeProduct.freeDelivery);
+  document.getElementById('faqDeliveryText').textContent = freeDel ? 'সারাদেশে ডেলিভারি সম্পূর্ণ ফ্রি।' : `ঢাকার ভিতরে ৳${DELIVERY_CHARGE.inside} এবং ঢাকার বাইরে ৳${DELIVERY_CHARGE.outside}।`;
+  document.getElementById('zoneInsideLabel').textContent = freeDel ? 'ফ্রি ডেলিভারি' : `ডেলিভারি ৳${DELIVERY_CHARGE.inside}`;
+  document.getElementById('zoneOutsideLabel').textContent = freeDel ? 'ফ্রি ডেলিভারি' : `ডেলিভারি ৳${DELIVERY_CHARGE.outside}`;
+
+  renderVariants(p);
+  document.getElementById('modalProductImg').src = p.image;
+  document.getElementById('modalProductName').textContent = p.name;
+  document.getElementById('modalPriceLine').textContent = `৳${p.price.toLocaleString('en-US')}${p.oldPrice ? ' (regular ৳' + p.oldPrice.toLocaleString('en-US') + ')' : ''}`;
+  updateSummary();
+
+  // Meta Pixel — ViewContent (customer landed on this product's page)
+  if (window.fbq) fbq('track', 'ViewContent', { content_ids: [p.id], content_name: p.name, content_type: 'product', value: p.price, currency: 'BDT' });
+}
+
+function renderVariants(p) {
+  const wrap = document.getElementById('pVariantsWrap');
+  wrap.innerHTML = '';
+  Object.keys(p.variants || {}).forEach(key => {
+    const options = p.variants[key];
+    activeVariant[key] = options.length === 1 ? options[0] : null;
+    const label = key === 'color' ? 'রঙ (Color)' : key === 'size' ? 'সাইজ (Size)' : key;
+    const group = document.createElement('div');
+    group.innerHTML = `
+      <label class="block text-sm font-semibold mb-2">${label}</label>
+      <div class="flex flex-wrap gap-2 variant-group" data-key="${key}">
+        ${options.map(opt => `<button type="button" class="variant-btn px-4 py-2 rounded-xl border-2 ${opt === activeVariant[key] ? 'border-brand bg-[#fff1e8] text-brand' : 'border-slate-200'} text-sm font-medium" data-key="${key}" data-value="${opt}">${opt}</button>`).join('')}
+      </div>`;
+    wrap.appendChild(group);
+  });
+  wrap.querySelectorAll('.variant-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.key, value = btn.dataset.value;
+      activeVariant[key] = value;
+      wrap.querySelectorAll(`.variant-btn[data-key="${key}"]`).forEach(b => { b.classList.remove('border-brand', 'bg-[#fff1e8]', 'text-brand'); b.classList.add('border-slate-200'); });
+      btn.classList.remove('border-slate-200'); btn.classList.add('border-brand', 'bg-[#fff1e8]', 'text-brand');
+      document.getElementById('pVariantError').classList.add('hidden');
+    });
+  });
+}
+
+// must be declared BEFORE renderProductPage() runs (it calls updateSummary which uses it)
+const pQtyInput = document.getElementById('pQtyInput');
+renderProductPage();
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+document.getElementById('pQtyMinus').addEventListener('click', () => { let v = parseInt(pQtyInput.value,10); if (v>1){ pQtyInput.value = v-1; updateSummary(); } });
+document.getElementById('pQtyPlus').addEventListener('click', () => { let v = parseInt(pQtyInput.value,10); if (v<10){ pQtyInput.value = v+1; updateSummary(); } });
+pQtyInput.addEventListener('change', updateSummary);
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const content = trigger.nextElementSibling;
+    const icon = trigger.querySelector('i');
+    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+    document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = '0px');
+    document.querySelectorAll('.faq-trigger i').forEach(i => i.classList.remove('rotate-180'));
+    if (!isOpen) { content.style.maxHeight = content.scrollHeight + 'px'; icon.classList.add('rotate-180'); }
+  });
+});
+
+/* =========================================================
+   ORDER MODAL OPEN/CLOSE
+========================================================= */
+const orderModal = document.getElementById('orderModal');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalPanel = orderModal.querySelector('.modal-panel');
+
+function checkVariantsSelected() {
+  const missing = Object.keys(activeVariant).find(k => !activeVariant[k]);
+  if (missing) {
+    const label = missing === 'color' ? 'রঙ' : missing === 'size' ? 'সাইজ' : missing;
+    const err = document.getElementById('pVariantError');
+    err.textContent = `দয়া করে ${label} নির্বাচন করুন`;
+    err.classList.remove('hidden');
+    return false;
+  }
+  return true;
+}
+
+function openOrderModal() {
+  if (!checkVariantsSelected()) { document.getElementById('pVariantsWrap').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+  orderModal.classList.remove('hidden'); orderModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => { modalPanel.classList.remove('opacity-0','scale-95'); modalPanel.classList.add('opacity-100','scale-100'); });
+
+  // Meta Pixel — InitiateCheckout (order form popup opened)
+  const q = parseInt(pQtyInput.value, 10) || 1;
+  if (window.fbq) fbq('track', 'InitiateCheckout', { content_ids: [activeProduct.id], content_type: 'product', num_items: q, value: activeProduct.price * q, currency: 'BDT' });
+}
+function closeOrderModal() {
+  modalPanel.classList.remove('opacity-100','scale-100'); modalPanel.classList.add('opacity-0','scale-95');
+  setTimeout(() => { orderModal.classList.add('hidden'); orderModal.classList.remove('flex'); document.body.style.overflow=''; }, 200);
+}
+modalOverlay.addEventListener('click', closeOrderModal);
+document.getElementById('modalCloseBtn').addEventListener('click', closeOrderModal);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !orderModal.classList.contains('hidden')) closeOrderModal(); });
+
+/* =========================================================
+   DELIVERY ZONE / PAYMENT
+========================================================= */
+document.querySelectorAll('input[name="zone"]').forEach(r => r.addEventListener('change', updateSummary));
+function getDeliveryCharge() {
+  if (activeProduct && activeProduct.freeDelivery) return 0;
+  const zone = document.querySelector('input[name="zone"]:checked')?.value || 'inside';
+  return DELIVERY_CHARGE[zone];
+}
+
+const mfsFields = document.getElementById('mfsFields');
+const mfsNumberLine = document.getElementById('mfsNumberLine');
+document.querySelectorAll('input[name="payment"]').forEach(r => {
+  r.addEventListener('change', () => {
+    const isMfs = r.checked && (r.value === 'bKash');
+    mfsFields.classList.toggle('hidden', !isMfs);
+    if (isMfs) mfsNumberLine.textContent = `আমাদের ${r.value} নম্বর: ${MERCHANT_PAYMENT[r.value]}`;
+  });
+});
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+function updateSummary() {
+  if (!activeProduct) return;
+  const qty = parseInt(pQtyInput.value, 10) || 1;
+  const delivery = getDeliveryCharge();
+  const subtotal = activeProduct.price * qty;
+  const total = subtotal + delivery;
+  document.getElementById('sumProduct').textContent = `${activeProduct.name} × ${qty}`;
+  document.getElementById('sumPrice').textContent = `৳${subtotal.toLocaleString('en-US')}`;
+  document.getElementById('sumDelivery').textContent = delivery === 0 ? 'ফ্রি' : `৳${delivery}`;
+  document.getElementById('sumTotal').textContent = `৳${total.toLocaleString('en-US')}`;
+}
+
+/* =========================================================
+   VALIDATION
+========================================================= */
+function showError(el, msg) { el.classList.add('border-red-400'); const e = el.parentElement.querySelector('.error-msg'); if (e) { e.textContent = msg; e.classList.remove('hidden'); } }
+function clearError(el) { el.classList.remove('border-red-400'); const e = el.parentElement.querySelector('.error-msg'); if (e) e.classList.add('hidden'); }
+function isValidBDPhone(p) { return /^01[3-9]\d{8}$/.test(p.trim()); }
+
+function validateForm() {
+  let valid = true;
+  const name = document.getElementById('custName');
+  const phone = document.getElementById('custPhone');
+  const address = document.getElementById('custAddress');
+  [name, phone, address].forEach(clearError);
+
+  if (!name.value.trim()) { showError(name, 'দয়া করে আপনার নাম লিখুন'); valid = false; }
+  if (!phone.value.trim()) { showError(phone, 'সঠিক মোবাইল নম্বর দিন'); valid = false; }
+  else if (!isValidBDPhone(phone.value)) { showError(phone, 'সঠিক মোবাইল নম্বর দিন (যেমন: 017XXXXXXXX)'); valid = false; }
+  if (!address.value.trim()) { showError(address, 'আপনার ঠিকানা লিখুন'); valid = false; }
+
+  const payment = document.querySelector('input[name="payment"]:checked').value;
+  if (payment === 'bKash') {
+    const mfsTrxId = document.getElementById('mfsTrxId');
+    clearError(mfsTrxId);
+    if (!mfsTrxId.value.trim()) { showError(mfsTrxId, 'Transaction ID দিতে হবে'); valid = false; }
+  }
+  return valid;
+}
+
+/* =========================================================
+   ORDER SUBMISSION
+========================================================= */
+function generateOrderId() {
+  // Unique per order (time + random) — the old localStorage counter gave every new customer the same ID.
+  return 'V' + Date.now().toString().slice(-7) + Math.floor(Math.random() * 90 + 10);
+}
+function escapeHtml(str) { return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+function buildOrderMessage(order) {
+  const paymentLines = (order.payment === 'bKash')
+    ? `💳 Payment: ${order.payment}\n📱 Merchant Number: ${order.merchantPaymentNumber}\n🔢 Transaction ID: ${escapeHtml(order.trxId)}`
+    : `💳 Payment: ক্যাশ অন ডেলিভারি`;
+
+  return `<b>🛒 নতুন অর্ডার — ${order.orderId}</b>
+🕒 ${order.time}
+
+👤 ${escapeHtml(order.customer.name)}
+📞 ${escapeHtml(order.customer.phone)}
+🏠 ${escapeHtml(order.customer.address)}
+🚚 জোন: ${order.deliveryZone === 'inside' ? 'ঢাকার ভিতরে' : 'ঢাকার বাইরে'}
+
+<b>পণ্য:</b>
+${escapeHtml(order.item.name)}${order.item.variant ? ' (' + escapeHtml(order.item.variant) + ')' : ''} × ${order.item.qty} — ৳${order.item.price * order.item.qty}
+
+${paymentLines}
+
+সাবটোটাল: ৳${order.subtotal}
+ডেলিভারি চার্জ: ৳${order.deliveryCharge}
+<b>সর্বমোট: ৳${order.total}</b>`;
+}
+
+async function sendOrderToBackend(order) {
+  try {
+    const res = await fetch(BACKEND_CONFIG.ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: buildOrderMessage(order) })
+    });
+    if (!res.ok) { console.warn('Order backend responded with an error status:', res.status); return false; }
+    return true;
+  } catch (err) {
+    console.warn('Order could not be sent to backend:', err);
+    return false;
+  }
+}
+
+const orderForm = document.getElementById('orderForm');
+orderForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (isSubmittingOrder) return;
+  // Honeypot check — a real visitor never fills this hidden field; a bot
+  // auto-filling every input will. Silently drop the submission.
+  if (document.getElementById('pWebsite').value.trim() !== '') {
+    console.warn('Submission blocked: honeypot field was filled.');
+    return;
+  }
+  if (!validateForm()) return;
+
+  isSubmittingOrder = true;
+  const submitBtn = document.getElementById('submitBtn');
+  const submitText = document.getElementById('submitBtnText');
+  submitBtn.disabled = true;
+  submitBtn.classList.add('opacity-70','cursor-not-allowed');
+  submitText.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> প্রসেস হচ্ছে...';
+
+  const qty = parseInt(pQtyInput.value, 10) || 1;
+  const delivery = getDeliveryCharge();
+  const subtotal = activeProduct.price * qty;
+  const total = subtotal + delivery;
+  const payment = document.querySelector('input[name="payment"]:checked').value;
+  const zone = document.querySelector('input[name="zone"]:checked').value;
+  const variantStr = Object.values(activeVariant).filter(Boolean).join(' / ');
+
+  const order = {
+    orderId: generateOrderId(),
+    time: new Date().toLocaleString('bn-BD', { dateStyle: 'medium', timeStyle: 'short' }),
+    item: { name: activeProduct.name, image: activeProduct.image, variant: variantStr, qty, price: activeProduct.price },
+    customer: {
+      name: document.getElementById('custName').value.trim(),
+      phone: document.getElementById('custPhone').value.trim(),
+      address: document.getElementById('custAddress').value.trim()
+    },
+    deliveryZone: zone,
+    deliveryCharge: delivery,
+    payment,
+    merchantPaymentNumber: (payment === 'bKash') ? MERCHANT_PAYMENT[payment] : '',
+    trxId: (payment === 'bKash') ? document.getElementById('mfsTrxId').value.trim() : '',
+    subtotal, total
+  };
+
+  const sent = await sendOrderToBackend(order);
+  if (!sent) {
+    // Order did not reach us: do NOT show success and do NOT fire Purchase.
+    alert('দুঃখিত, অর্ডার পাঠানো যায়নি। ইন্টারনেট চেক করে আবার চেষ্টা করুন।');
+    isSubmittingOrder = false;
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+    submitText.textContent = 'অর্ডার কনফার্ম করুন';
+    return;
+  }
+
+  // Meta Pixel — Purchase (only after the order was really sent). eventID = orderId for de-duplication.
+  if (window.fbq) fbq('track', 'Purchase', {
+    value: order.total, currency: 'BDT',
+    content_ids: [activeProduct.id], content_name: activeProduct.name,
+    content_type: 'product', num_items: qty
+  }, { eventID: order.orderId });
+
+  setTimeout(() => {
+    document.getElementById('formView').classList.add('hidden');
+    document.getElementById('successView').classList.remove('hidden');
+    document.getElementById('orderIdDisplay').textContent = order.orderId;
+    document.getElementById('orderTimeDisplay').textContent = order.time;
+    document.getElementById('successProductImg').src = order.item.image;
+    document.getElementById('successProductName').textContent = order.item.name + (order.item.variant ? ` (${order.item.variant})` : '');
+    document.getElementById('successProductQty').textContent = `পরিমাণ: ${order.item.qty}`;
+
+    isSubmittingOrder = false;
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('opacity-70','cursor-not-allowed');
+    submitText.textContent = 'অর্ডার কনফার্ম করুন';
+  }, 600);
+});
+
+document.getElementById('continueBtn').addEventListener('click', () => {
+  closeOrderModal();
+  setTimeout(() => {
+    orderForm.reset();
+    mfsFields.classList.add('hidden');
+    document.querySelectorAll('.error-msg').forEach(e => e.classList.add('hidden'));
+    document.querySelectorAll('#orderForm input, #orderForm textarea').forEach(i => i.classList.remove('border-red-400'));
+    document.getElementById('formView').classList.remove('hidden');
+    document.getElementById('successView').classList.add('hidden');
+    pQtyInput.value = 1;
+    updateSummary();
+  }, 250);
+});
+</script>
+
+</body>
+</html>
